@@ -1,0 +1,32 @@
+LAYOUT (SPACING=COMPACT, STYLE="siswindow")
+VBOX
+   GRID 
+   {
+   [w1                              ]
+   [                                ]
+   [                                ]
+   [rad_usertype                    ]
+   [lbl_name       ][edt_login      ]
+   [lbl_pwd        ][edt_password   ]
+   [chk_remember                    ]
+   [bt_login                        ]
+   [w2                              ]
+   }
+   END -- GRID
+END -- VBOX
+END -- LAYOUT
+
+ATTRIBUTES
+webcomponent w1 = formonly.loginhdr, COMPONENTTYPE="loginhdr", HEIGHT=3, STRETCH=X;
+webcomponent w2 = formonly.loginbottom, COMPONENTTYPE="login_bottom", STRETCH=Y;
+
+LABEL lbl_name       : TEXT="User name ";
+LABEL lbl_pwd        : TEXT="Password  ";
+
+EDIT     edt_login    = formonly.edt_login, KEYBOARDHINT=EMAIL, SCROLL;
+EDIT     edt_password = formonly.edt_password, INVISIBLE, SCROLL;
+RADIOGROUP rad_usertype = formonly.rad_usertype, ITEMS=((2,"Parent"), (3,"Student")), ORIENTATION=HORIZONTAL;  -- (1,"Staff"), 
+CHECKBOX chk_remember = formonly.chk_remember, VALUECHECKED="1", VALUEUNCHECKED="0", NOT NULL, TEXT="Remember user name?";
+
+BUTTON   bt_login : login, STYLE="login_button";
+END

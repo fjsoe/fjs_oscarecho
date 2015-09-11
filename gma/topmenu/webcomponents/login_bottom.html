@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta Http-Equiv="Cache-Control" content="no-cache"/>
+    <meta Http-Equiv="Pragma" content="no-cache"/>
+    <meta Http-Equiv="Expires" content="0"/>
+
+    <link rel="stylesheet" href="sis_common.css">
+    
+    <script language="JavaScript">
+      // Used by wc_sismobile.js if set
+      var g_WC_PREFIX = "";   // Prefix auto-added to ids for wc_sismobile.js only, omit in 4GL frontcalls
+      var g_WC_THISFILE = "login_bottom.html";
+    </script>
+
+    <!-- The gICAPI interface and some utility functions -->
+    <script language="JavaScript" type="text/javascript" src="wc_sismobile.js"></script>
+
+    <style type="text/css"> 
+      .embedded-bottom {
+        height: 60px;
+        width: 100%;
+      }
+      .bottom-link-strip {
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        vertical-align: bottom;
+        display: -webkit-flex; /* Safari */
+        -webkit-justify-content: space-around; /* Safari 6.1+ */
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.9em;
+        color: gray;
+      }
+    </style>    
+  </head>
+
+  <body class="embedded">
+    <div class="embedded-bottom"  >
+      <div class="bottom-link-strip">
+        <a href="#" class="bottom-link" onclick="execAction('newuser');return false;">New User?</a> 
+        <a href="#" class="bottom-link" onclick="execAction('forgotpwd');return false;">Forgot Password?</a>
+       </div> 
+    </div>
+  </body>
+</html>
+
