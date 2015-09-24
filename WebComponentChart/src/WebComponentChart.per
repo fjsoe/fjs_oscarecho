@@ -1,0 +1,74 @@
+-- FOURJS_START_COPYRIGHT(U,2010)
+-- Property of Four Js*
+-- (c) Copyright Four Js 2010, 2014. All Rights Reserved.
+-- * Trademark of Four Js Development Tools Europe Ltd
+--   in the United States and elsewhere
+-- 
+-- Four Js and its suppliers do not warrant or guarantee that these samples are
+-- accurate and suitable for your purposes.
+-- Their inclusion is purely for information purposes only.
+-- FOURJS_END_COPYRIGHT
+
+-- ===========================================================================
+
+ACTION DEFAULTS
+
+ACTION drilldown ( DEFAULTVIEW=NO )
+
+END
+
+-- ===========================================================================
+
+LAYOUT (TEXT="Web component demo")
+
+GRID
+{
+Current month: [currmonth      ]
+               [currvalue      ]
+
+[wc                                                                            ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+[                                                                              ]
+
+Please notice this demo use Fusion Charts, JSChart and RGraph.
+Take a look to their licenses
+
+}
+END --GRID
+
+END --LAYOUT
+
+-- ===========================================================================
+
+ATTRIBUTES
+
+WEBCOMPONENT wc = FORMONLY.wc,
+  COMPONENTTYPE="chart",
+  STRETCH=BOTH,
+  PROPERTIES= (
+    type="DEBUG",
+    caption="Monthly Sales Summary",
+    subcaption="For the year 2009",
+    xaxisname="Month",
+    yaxisname="Sales",
+    numberprefix="$",
+    labels=("January", "February", "March", "April", "May",  "June", "July", "August", "September", "October", "November", "December"),
+    values=( 0,         0,          0,       0,       0,      0,      0,      0,        0,           0,         0,          0)
+  );
+EDIT currmonth = FORMONLY.currmonth, JUSTIFY=center, STYLE="header";
+SPINEDIT currvalue = FORMONLY.currvalue, STYLE="header", STEP=100;
