@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm fileVersion="23200" gstVersion="23200" name="ManagedForm" uid="{26c5fe4b-c3ea-4a39-bbcf-b7af89726251}">
+  <AGSettings/>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="availableDimensionsRecord" order="" uid="{9efcbad7-944c-470e-bda9-59be7978755d}" where="">
+    <RecordField colName="" fieldIdRef="6" name="availableDimensionsTitle" sqlTabName="" sqlType="VARCHAR" table_alias_name="" uid="{a0e78b35-c954-4fe8-a49e-8824dd99b855}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="selectedDimensionsRecord" order="" uid="{6ba9ce57-11ad-46b7-b046-27d08d6d91bc}" where="">
+    <RecordField colName="" fieldIdRef="4" name="selectedDimensionsTitle" sqlTabName="" sqlType="VARCHAR" table_alias_name="" uid="{97c02d20-a8e4-491a-95b2-698029cb4465}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="availableMeasuresRecord" order="" uid="{1d47648b-20b2-4b2b-92bf-f1f2a2e85139}" where="">
+    <RecordField colName="" fieldIdRef="9" name="availableMeasuresTitle" sqlTabName="" sqlType="VARCHAR" table_alias_name="" uid="{a2d36e5b-6d6c-4b42-aa61-da06a8f2c1e1}"/>
+    <RecordField colName="" fieldIdRef="10" name="availableMeasuresIsNumeric" sqlTabName="" table_alias_name="" uid="{b846c55b-83a7-429e-b7bc-c71fd6c5bc0b}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="selectedMeasuresRecord" order="" uid="{e7fb2eed-704c-4807-890f-1430aa42394f}" where="">
+    <RecordField colName="" fieldIdRef="11" name="selectedMeasuresTitle" sqlTabName="" sqlType="VARCHAR" table_alias_name="" uid="{1382fba7-1def-4742-bbf7-6ef06b8e257a}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="sortByRecord" order="" uid="{d188c8e4-230c-48c4-8888-97c2f02e8681}" where="">
+    <RecordField colName="" fieldIdRef="12" name="sortByTitle" sqlTabName="" sqlType="VARCHAR" table_alias_name="" uid="{83a2e057-d71f-4a19-ac6d-4ba96a0d5ff9}"/>
+    <RecordField colName="" fieldIdRef="13" name="sortByDescending" sqlTabName="" table_alias_name="" uid="{528450e8-edca-43b1-b2e9-8ca6c3439f49}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="controlRecord" order="" uid="{455a82d6-d260-4d97-92ff-8d271401b9fb}" where="">
+    <RecordField colName="" fieldIdRef="16" name="title" sqlTabName="" table_alias_name="" uid="{f0c7a255-a88d-4eaa-98e9-be9b7896e986}"/>
+    <RecordField colName="" defaultValue="Table" fieldIdRef="15" name="drawAs" sqlTabName="" table_alias_name="" uid="{24ca56fb-fb6e-43b6-be9b-de85e00033ec}"/>
+    <RecordField colName="" fieldIdRef="5" name="dimensionsDisplaySelection" sqlTabName="" table_alias_name="" uid="{758f4451-59f3-4b34-a358-20f8a5e19a5f}"/>
+    <RecordField colName="" fieldIdRef="21" name="measuresDisplaySelection" sqlTabName="" table_alias_name="" uid="{ca8424e8-001c-4c05-a5a1-34d93679cda4}"/>
+    <RecordField colName="" fieldIdRef="22" name="outputOrder" sqlTabName="" table_alias_name="" uid="{ea6e69fc-1328-4ed1-b991-331d4e6ea136}"/>
+    <RecordField colName="" fieldIdRef="14" name="topN" sqlTabName="" table_alias_name="" uid="{d665bee9-a143-499e-86d3-30a19dccf1ac}"/>
+    <RecordField colName="" defaultValue="1" fieldIdRef="17" name="displayFactRows" sqlTabName="" table_alias_name="" uid="{81b090b2-841b-44fc-bc77-560cc0cd4eaa}"/>
+    <RecordField colName="" fieldIdRef="18" name="displayRecurringValues" sqlTabName="" table_alias_name="" uid="{1d38c592-ff78-4b10-ac5c-368f84ef6b1b}"/>
+    <RecordField colName="" defaultValue="1" fieldIdRef="19" name="computeAggregatesOnInnermostDimension" sqlTabName="" table_alias_name="" uid="{a0e64379-3901-46e9-9391-2d7b123b4e2d}"/>
+    <RecordField colName="" defaultValue="1" fieldIdRef="1" name="computeTotal" sqlTabName="" table_alias_name="" uid="{7061c535-b303-4d11-915e-b41b72a051b8}"/>
+    <RecordField colName="" defaultValue="0" fieldIdRef="2" name="computeCount" sqlTabName="" table_alias_name="" uid="{fa148c82-8a4c-4fb6-8fe2-253ae4dcf142}"/>
+    <RecordField colName="" defaultValue="0" fieldIdRef="3" name="computeDistinctCount" sqlTabName="" table_alias_name="" uid="{41f3b1fd-8a95-45ee-bb24-d9a4b934d4e3}"/>
+    <RecordField colName="" defaultValue="0" fieldIdRef="7" name="computeAverage" sqlTabName="" table_alias_name="" uid="{c6989762-d9b5-4d85-bb5a-b71e21a09676}"/>
+    <RecordField colName="" defaultValue="0" fieldIdRef="8" name="computeMinimum" sqlTabName="" table_alias_name="" uid="{02a2c720-767d-4a47-bbb5-10df54ea2f51}"/>
+    <RecordField colName="" defaultValue="0" fieldIdRef="20" name="computeMaximum" sqlTabName="" table_alias_name="" uid="{c2a92b42-3bd0-42de-8e30-30c3e6bf8abe}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="Undefined" order="" uid="{0732eba2-fe74-4ce6-84f9-3c0d915c3609}" where=""/>
+  <Form gridHeight="55" gridWidth="330" name="Form" text="Menus">
+    <Group gridHeight="49" gridWidth="330" name="Group1" posX="0" posY="0" text="Use drag &amp; drop to select fields">
+      <VBox gridHeight="35" gridWidth="138" name="vbox1" posX="2" posY="2">
+        <Grid gridHeight="10" gridWidth="138" name="Grid1" posX="0" posY="1">
+          <Table doubleClick="doubleClick" gridHeight="7" gridWidth="32" name="AvailableDimensions" posX="1" posY="0" totalRows="6" unhidableColumns="true" unmovableColumns="true" unsortableColumns="true">
+            <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="6" gridHeight="1" gridWidth="30" name="availableDimensionsTitle" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="" sqlType="VARCHAR" stepX="" stepY="" tabIndex="1" table_alias_name="" title="Available Dimensions" widget="Edit"/>
+          </Table>
+          <Table doubleClick="doubleClick" gridHeight="7" gridWidth="32" name="SelectedDimensions" posX="34" posY="0" totalRows="6" unhidableColumns="true" unmovableColumns="true">
+            <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="4" gridHeight="1" gridWidth="30" name="selectedDimensionsTitle" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="" sqlType="VARCHAR" stepX="" stepY="" tabIndex="1" table_alias_name="" title="Selected Dimensions" widget="Edit"/>
+          </Table>
+          <Phantom colName="" fieldId="5" name="dimensionsDisplaySelection" sqlTabName="" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="" fieldId="21" name="measuresDisplaySelection" sqlTabName="" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="" fieldId="22" name="outputOrder" sqlTabName="" table_alias_name="" widget="Phantom"/>
+        </Grid>
+        <HBox gridHeight="10" gridWidth="138" name="hbox1" posX="0" posY="11">
+          <Table aggregateText="" doubleClick="doubleClick" gridHeight="10" gridWidth="41" name="availableMeasures" posX="2" posY="0" totalRows="6" unhidableColumns="true" unmovableColumns="true" unsortableColumns="true">
+            <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="9" gridHeight="1" gridWidth="30" name="availableMeasuresTitle" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="" sqlType="VARCHAR" stepX="" stepY="" tabIndex="2" table_alias_name="" title="Available Measures" widget="Edit"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="10" gridHeight="1" gridWidth="8" name="availableMeasuresIsNumeric" notNull="true" posX="30" posY="0" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="3" table_alias_name="" text="" title="Numeric" widget="CheckBox"/>
+          </Table>
+          <Table doubleClick="doubleClick" gridHeight="10" gridWidth="32" name="selectedMeasures" posX="43" posY="0" totalRows="6" unhidableColumns="true" unmovableColumns="true" unsortableColumns="true">
+            <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="11" gridHeight="1" gridWidth="30" name="selectedMeasuresTitle" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="" sqlType="VARCHAR" stepX="" stepY="" tabIndex="4" table_alias_name="" title="Selected Measures" widget="Edit"/>
+          </Table>
+          <Table doubleClick="doubleClick" gridHeight="10" gridWidth="41" name="sortBy" posX="75" posY="0" totalRows="6" unhidableColumns="true" unmovableColumns="true" unsortableColumns="true">
+            <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="12" gridHeight="1" gridWidth="30" name="sortByTitle" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="" sqlType="VARCHAR" stepX="" stepY="" tabIndex="5" table_alias_name="" title="Sort By" widget="Edit"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="13" gridHeight="1" gridWidth="8" name="sortByDescending" notNull="true" posX="30" posY="0" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="6" table_alias_name="" text="" title="Descending" widget="CheckBox"/>
+          </Table>
+          <Grid gridHeight="10" gridWidth="20" name="grid2" posX="116" posY="0">
+            <Label gridHeight="1" gridWidth="6" name="label1" posX="2" posY="2" text="Top N:"/>
+            <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="14" gridHeight="1" gridWidth="3" name="topN" posX="10" posY="2" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="7" table_alias_name="" title="edit9" widget="Edit"/>
+          </Grid>
+        </HBox>
+        <HBox gridHeight="13" gridWidth="138" name="hbox2" posX="0" posY="21">
+          <Grid gridHeight="13" gridWidth="134" name="grid3" posX="2" posY="0">
+            <Label gridHeight="1" gridWidth="10" name="label2" posX="4" posY="1" text="Draw As:"/>
+            <ComboBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="Table" fieldId="15" gridHeight="1" gridWidth="16" items="Area, Bar, Bar3D, Line, Line3D, Pie, Pie3D, Polar, Ring, Scatter, StackedArea, StackedBar, Step, StepArea, Table, TimeSeries, Waterfall, XYArea, XYLine, XYStackedArea" name="drawAs" posX="21" posY="1" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="8" table_alias_name="" title="combobox1" widget="ComboBox">
+              <Item lstrtext="false" name="Area" text="Area"/>
+              <Item lstrtext="false" name="Bar" text="Bar"/>
+              <Item lstrtext="false" name="Bar3D" text="Bar3D"/>
+              <Item lstrtext="false" name="Line" text="Line"/>
+              <Item lstrtext="false" name="Line3D" text="Line3D"/>
+              <Item lstrtext="false" name="Pie" text="Pie"/>
+              <Item lstrtext="false" name="Pie3D" text="Pie3D"/>
+              <Item lstrtext="false" name="Polar" text="Polar"/>
+              <Item lstrtext="false" name="Ring" text="Ring"/>
+              <Item lstrtext="false" name="Scatter" text="Scatter"/>
+              <Item lstrtext="false" name="StackedArea" text="StackedArea"/>
+              <Item lstrtext="false" name="StackedBar" text="StackedBar"/>
+              <Item lstrtext="false" name="Step" text="Step"/>
+              <Item lstrtext="false" name="StepArea" text="StepArea"/>
+              <Item lstrtext="false" name="Table" text="Table"/>
+              <Item lstrtext="false" name="TimeSeries" text="TimeSeries"/>
+              <Item lstrtext="false" name="Waterfall" text="Waterfall"/>
+              <Item lstrtext="false" name="XYArea" text="XYArea"/>
+              <Item lstrtext="false" name="XYLine" text="XYLine"/>
+              <Item lstrtext="false" name="XYStackedArea" text="XYStackedArea"/>
+            </ComboBox>
+            <Label gridHeight="1" gridWidth="10" name="label3" posX="4" posY="2" text="Title:"/>
+            <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="16" gridHeight="1" gridWidth="107" name="title" posX="21" posY="2" rowCount="" scroll="true" sqlTabName="" stepX="" stepY="" tabIndex="9" table_alias_name="" title="edit10" widget="Edit"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="1" fieldId="17" gridHeight="1" gridWidth="15" name="displayFactRows" notNull="true" posX="4" posY="3" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="10" table_alias_name="" text="Display Fact Rows" title="checkbox1" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="18" gridHeight="1" gridWidth="19" name="displayRecurringValues" notNull="true" posX="4" posY="4" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="11" table_alias_name="" text="Display Recurring Values" title="checkbox2" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="1" fieldId="19" gridHeight="1" gridWidth="34" name="computeAggregatesOnInnermostDimension" notNull="true" posX="4" posY="5" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="12" table_alias_name="" text="Compute Aggregates on Innermost Dimensions" title="checkbox3" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="1" fieldId="1" gridHeight="1" gridWidth="15" name="computeTotal" notNull="true" posX="4" posY="6" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="13" table_alias_name="" text="Compute Totals" title="checkbox3" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="0" fieldId="2" gridHeight="1" gridWidth="15" name="computeCount" notNull="true" posX="4" posY="7" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="14" table_alias_name="" text="Compute Count" title="checkbox3" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="0" fieldId="3" gridHeight="1" gridWidth="19" name="computeDistinctCount" notNull="true" posX="4" posY="8" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="15" table_alias_name="" text="Compute Distinct Count" title="checkbox3" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="0" fieldId="7" gridHeight="1" gridWidth="15" name="computeAverage" notNull="true" posX="4" posY="9" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="16" table_alias_name="" text="Compute Average" title="checkbox3" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="0" fieldId="8" gridHeight="1" gridWidth="16" name="computeMinimum" notNull="true" posX="4" posY="10" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="17" table_alias_name="" text="Compute Minimum" title="checkbox3" widget="CheckBox"/>
+            <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" defaultValue="0" fieldId="20" gridHeight="1" gridWidth="16" name="computeMaximum" notNull="true" posX="4" posY="11" rowCount="" sqlTabName="" stepX="" stepY="" tabIndex="18" table_alias_name="" text="Compute Maximum" title="checkbox3" widget="CheckBox"/>
+          </Grid>
+        </HBox>
+      </VBox>
+    </Group>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewA5AGUAZgBjAGIAYQBkADcALQA5ADQANABjAC0ANAA3ADAAZQAtAGIAZABhADkALQA1ADkAYgBlADcAOQA3ADgANwA1ADUAZAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEwAewAxAGQAMwA4AGMANQA5ADIALQBmAGYANwA4AC0ANABiADEAMAAtAGEAYwA1AGMALQAzADYAOABmADgANABlAGYANgBiADEAYgB9QCAAAAgAAAFAZkzM1/MzNQAAAAAAAAAAAQAAAEwAewAwADcAMwAyAGUAYgBhADIALQBmAGUANwA0AC0ANABjAGUANgAtADgANABmADkALQAzAGMAMABkADkAMQA1AGMAMwA2ADAAOQB9QEgAAAwAAAJASAAADAAAAgAAAAAAAAAAAQAAAEwAewBmAGEAMQA0ADgAYwA4ADIALQA4AGEANABjAC0ANABmAGIANgAtADgAZgBlADIALQAyADUAMwBhAGUANABkAGMAZgAxADQAMgB9QCAAAAgAAAFAbhmZqKZmaAAAAAAAAAAAAQAAAEwAewBlAGEANgBlADYAOQBmAGMALQAxADMAMgA4AC0ANABlAGQAMQAtAGIAOQA5ADEALQAzADMAMQBkADQAZQA2AGUAYQAxADMANgB9QCAAAAgAAAFAXQAADoAAAgAAAAAAAAAAAQAAAEwAewA4ADEAYgAwADkAMABiADIALQA4ADQAMQBiAC0ANAA0AGYAYwAtAGIAYwA3ADcALQA1ADYAMABjAGMAMABjAGQANABlAGEAYQB9QCAAAAgAAAFAY7MzPQzMzgAAAAAAAAAAAQAAAEwAewBkADEAOAA4AGMAOABlADQALQAyADMAMABjAC0ANAA4AGMANAAtADgAOAA4ADgALQA5ADcAYwAyAGYAMAAyAGUAOAA2ADgAMQB9QEAAABAAAAZAQAAAEAAABgAAAAAAAAAAAQAAAEwAewBiADgANAA2AGMANQA1AGIALQA4ADMAYQA3AC0ANAAyADkAZQAtAGIANwBiAGMALQBjADcAMQBmAGQANgBjADUAYgBjADAAYgB9QCAAABAAAAZASszM55mZowAAAAAAAAAAAQAAAEwAewAxADMAOAAyAGYAYgBhADcALQAxAGQAZQBmAC0ANAA3ADQAMgAtAGIAYgBmADcALQA2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]]>
+  </DiagramLayout>
+</ManagedForm>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23204" version="5.00">
+    <report:Settings RWPageWidth="a4width" RWPageLength="a4length" RWLeftMargin="1.3cm" RWTopMargin="1.3cm" RWRightMargin="1.3cm" RWBottomMargin="1.3cm">
+        <report:FormatList>
+            <report:Format-PDF/>
+            <report:Format-image/>
+            <report:Format-SVG/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Invoice" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="Invoice Letter Correspondence OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                    <MINIPAGE name="PageRoot" width="max" length="max">
+                        <LAYOUTNODE name="FirstPageHeader" width="max" length="min" layoutDirection="topToBottom" port="firstPageHeader">
+                            <MINIPAGE name="OfficeDetails" width="min" layoutDirection="leftToRight">
+                                <IMAGEBOX name="OfficeLogo" y="0.5cm" floatingBehavior="free" url="images/office_logo.svg" intendedResolution="96"/>
+                                <LAYOUTNODE name="Office_Address" y="max-1cm" width="min" length="min" anchorY="1" floatingBehavior="enclosed">
+                                    <WORDBOX name="OfficeName" alignment="near" fontBold="true" baselineType="leftleft" text="Office Supplies"/>
+                                    <WORDBOX name="OfficeAddress" alignment="near" baselineType="leftleft" text="4 Avenue de Paris"/>
+                                    <WORDBOX name="OfficeCity" alignment="near" baselineType="leftleft" text="78000 Versailles"/>
+                                    <LAYOUTNODE name="PhoneDetails" x="0" width="min" length="min" anchorX="0" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                        <LAYOUTNODE name="PhoneTitles" width="min" length="min">
+                                            <WORDBOX name="PhoneTitle" alignment="baseline" baselineType="leftleft" text="Phone:"/>
+                                            <WORDBOX name="FaxTitle" alignment="baseline" baselineType="leftleft" text="FAX:"/>
+                                        </LAYOUTNODE>
+                                        <LAYOUTNODE name="PhoneNumbers" width="min" length="min">
+                                            <WORDBOX name="PhoneNumber" alignment="baseline" baselineType="leftleft" text="+33 (0) 1 23 45 67 89 "/>
+                                            <WORDBOX name="FaxNumber" alignment="baseline" baselineType="leftleft" text="+33 (0) 1 23 45 67 80"/>
+                                        </LAYOUTNODE>
+                                    </LAYOUTNODE>
+                                </LAYOUTNODE>
+                            </MINIPAGE>
+                            <MINIPAGE name="Spacer001" width=".2cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="CustomerDetails" width="min" layoutDirection="leftToRight">
+                                <LAYOUTNODE name="customerAddress" x="0cm" y="max-1cm" width="min" length="min" anchorY="1" bgColor="#ccffff" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                    <LAYOUTNODE name="Layout Node14" width=".2cm" length="min" swapX="true"/>
+                                    <LAYOUTNODE name="Layout Node15" width="width(&quot;M&quot;)*22" length="min">
+                                        <LAYOUTNODE name="Layout Node16" width="0.2cm" length="1" layoutDirection="leftToRight"/>
+                                        <LAYOUTNODE name="Layout Node17" width="min" length="min" color="#cc0000" fontSize="8" fontItalic="true" layoutDirection="leftToRight">
+                                            <WORDBOX name="CustCode" alignment="baseline" baselineType="leftleft" text="Customer Code:  "/>
+                                            <rtl:input-variable name="orderline.orders.userid" type="FGLString" expectedLocation="expectedAhead"/>
+                                            <WORDBOX name="CustCodeValue" alignment="near" baselineType="leftleft" text="{{orderline.orders.userid.trim()}}"/>
+                                        </LAYOUTNODE>
+                                        <LAYOUTNODE name="Layout Node18" width="0.2cm" length="min" layoutDirection="leftToRight"/>
+                                        <LAYOUTNODE name="Layout Node19" width="min" length="min" layoutDirection="leftToRight">
+                                            <rtl:input-variable name="orderline.orders.billfirstname" type="FGLString" expectedLocation="expectedAhead"/>
+                                            <WORDBOX name="BillFirstname" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.billfirstname.trim()}}"/>
+                                            <WORDBOX name="WordBox21" alignment="baseline" baselineType="leftleft" text=" "/>
+                                            <rtl:input-variable name="orderline.orders.billlastname" type="FGLString" expectedLocation="expectedAhead"/>
+                                            <WORDBOX name="BillLastname" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.billlastname.trim()}}"/>
+                                        </LAYOUTNODE>
+                                        <rtl:input-variable name="orderline.orders.billaddr1" type="FGLString" expectedLocation="expectedAhead"/>
+                                        <WORDBOX name="BillAddress1" alignment="near" baselineType="leftleft" text="{{orderline.orders.billaddr1.trim()}}"/>
+                                        <rtl:input-variable name="orderline.orders.billaddr2" type="FGLString" expectedLocation="expectedAhead"/>
+                                        <WORDBOX name="BillAddress2" alignment="near" baselineType="leftleft" text="{{orderline.orders.billaddr2.trim()}}"/>
+                                        <LAYOUTNODE name="Layout Node20" width="min" length="min" layoutDirection="leftToRight">
+                                            <rtl:input-variable name="orderline.orders.billzip" type="FGLString" expectedLocation="expectedAhead"/>
+                                            <WORDBOX name="BillZip" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.billzip.trim()}}"/>
+                                            <WORDBOX name="WordBox26" alignment="baseline" baselineType="leftleft" text=" "/>
+                                            <rtl:input-variable name="orderline.orders.billcity" type="FGLString" expectedLocation="expectedAhead"/>
+                                            <WORDBOX name="BillCity" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.billcity.trim()}}"/>
+                                            <WORDBOX name="WordBox28" alignment="baseline" baselineType="leftleft" text=" "/>
+                                            <rtl:input-variable name="orderline.orders.billstate" type="FGLString" expectedLocation="expectedAhead"/>
+                                            <WORDBOX name="BillState" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.billstate.trim()}}"/>
+                                        </LAYOUTNODE>
+                                        <rtl:input-variable name="orderline.country.codedesc" type="FGLString" expectedLocation="expectedAhead"/>
+                                        <WORDBOX name="Country" alignment="near" baselineType="leftleft" text="{{orderline.country.codedesc.trim()}}"/>
+                                        <LAYOUTNODE name="Layout Node21" width="0.2cm" length="min" layoutDirection="leftToRight"/>
+                                    </LAYOUTNODE>
+                                    <LAYOUTNODE name="Layout Node22" width=".2cm" length="min" swapX="true"/>
+                                </LAYOUTNODE>
+                            </MINIPAGE>
+                            <MINIPAGE name="Spacer002" width=".2cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="Customer_Order" width="min" length="max" alignment="center" layoutDirection="leftToRight">
+                                <WORDBOX name="CustOrderTitle" alignment="baseline" fontSize="25" baselineType="leftleft" text="Customer Order"/>
+                            </MINIPAGE>
+                            <MINIPAGE name="Spacer003" width=".2cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="BlueLine001" width=".1cm" bgColor="#cc" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="FirstTableHeader" width="min" length="max" bgColor="#cccccc" layoutDirection="leftToRight">
+                                <WORDBOX name="Separator01" alignment="baseline" baselineType="leftleft" port="itemSeparator" text=" "/>
+                                <LAYOUTNODE name="Layout Node25" width="min" length="2.5cm" layoutDirection="leftToRight"/>
+                                <WORDBOX name="ItemID1" width="width(&quot;WW-000-W&quot;)" alignment="baseline" baselineType="leftleft" textAlignment="left" text="Item ID"/>
+                                <WORDBOX name="Descr1" width="5.5cm" alignment="baseline" baselineType="leftleft" text="Description"/>
+                                <WORDBOX name="Quant1" width="max(width(&quot;000000&quot;),width(&quot;Quantity&quot;))" alignment="baseline" baselineType="leftleft" textAlignment="right" text="Quantity"/>
+                                <WORDBOX name="UnitPrice1" width="max(width(&quot;000,000.00&quot;),width(&quot;Unit Price&quot;))" alignment="baseline" baselineType="leftleft" textAlignment="right" text="Unit Price"/>
+                                <WORDBOX name="Total1" y="max-1cm" anchorY="1" alignment="baseline" baselineType="leftleft" floatingBehavior="enclosed" text="Total"/>
+                            </MINIPAGE>
+                            <MINIPAGE name="BlueLine002" width=".1cm" bgColor="#cc" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="Spacer004" width=".2cm" layoutDirection="leftToRight"/>
+                            <LAYOUTNODE name="FirstOrderDetails" width="min" length="max" layoutDirection="leftToRight">
+                                <WORDBOX name="OrdDateLbl1" alignment="baseline" baselineType="leftleft" text="Order Date: "/>
+                                <rtl:input-variable name="orderline.orders.orderdate" type="FGLString" expectedLocation="expectedAhead"/>
+                                <WORDBOX name="OrderDate1" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.orderdate}}"/>
+                                <LAYOUTNODE name="Layout Node23" y="max-5cm" width="min" length="min" anchorY="1" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                    <WORDBOX name="OrderNoLbl1" alignment="baseline" baselineType="leftleft" text="Order No.:  "/>
+                                    <rtl:input-variable name="orderline.orders.orderid" type="FGLNumeric" expectedLocation="expectedAhead"/>
+                                    <WORDBOX name="OrderId1" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.orderid.format(&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;)}}"/>
+                                </LAYOUTNODE>
+                                <LAYOUTNODE name="Layout Node24" y="max-1cm" width="min" length="min" anchorY="1" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                    <WORDBOX name="OriginText1" alignment="baseline" baselineType="leftleft" text=" Origin: "/>
+                                    <rtl:input-variable name="orderline.orders.sourceapp" type="FGLString" expectedLocation="expectedAhead"/>
+                                    <WORDBOX name="SourceApp1" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.sourceapp}}"/>
+                                </LAYOUTNODE>
+                            </LAYOUTNODE>
+                            <MINIPAGE name="Spacer005" width=".2cm" layoutDirection="leftToRight"/>
+                        </LAYOUTNODE>
+                        <LAYOUTNODE name="AnyPageHeader" width="max" length="min" layoutDirection="topToBottom" port="anyPageHeader">
+                            <MINIPAGE name="Spacer006" width=".2cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="BlueLine003" width=".1cm" bgColor="#cc" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="AnyTableHeader" width="min" length="max" bgColor="#cccccc" layoutDirection="leftToRight">
+                                <WORDBOX name="Separator02" alignment="baseline" baselineType="leftleft" port="itemSeparator" text=" "/>
+                                <LAYOUTNODE name="Layout Node26" width="min" length="2.5cm" layoutDirection="leftToRight"/>
+                                <WORDBOX name="ItemID2" width="width(&quot;WW-000-W&quot;)" alignment="baseline" baselineType="leftleft" textAlignment="left" text="Item ID"/>
+                                <WORDBOX name="Descr2" width="5.5cm" alignment="baseline" baselineType="leftleft" text="Description"/>
+                                <WORDBOX name="Quant2" width="max(width(&quot;000000&quot;),width(&quot;Quantity&quot;))" alignment="baseline" baselineType="leftleft" textAlignment="right" text="Quantity"/>
+                                <WORDBOX name="UnitPrice2" width="max(width(&quot;000,000.00&quot;),width(&quot;Unit Price&quot;))" alignment="baseline" baselineType="leftleft" textAlignment="right" text="Unit Price"/>
+                                <WORDBOX name="Total2" y="max-1cm" anchorY="1" alignment="baseline" baselineType="leftleft" floatingBehavior="enclosed" text="Total"/>
+                            </MINIPAGE>
+                            <MINIPAGE name="BlueLine004" width=".1cm" bgColor="#cc" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="Spacer007" width=".2cm" layoutDirection="leftToRight"/>
+                            <LAYOUTNODE name="OrderDetailsContinued" width="max" length="min" layoutDirection="topToBottom" floatingBehavior="enclosed">
+                                <rtl:input-variable name="orderline.orders.orderid" type="FGLNumeric" expectedLocation="expectedAhead"/>
+                                <rtl:input-variable name="orderline.orders.orderdate" type="FGLString" expectedLocation="expectedAhead"/>
+                                <WORDBOX name="Text_OrdersContinued" floatingBehavior="enclosed" text="{{&quot;Order &quot;+orderline.orders.orderid.format(&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot;)+&quot; from &quot;+orderline.orders.orderdate+&quot;, continued...&quot;}}"/>
+                                <LAYOUTNODE name="LayoutNode" width="min" length="max" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                    <WORDBOX name="Text_TotalFromPrevious" floatingBehavior="enclosed" text="{{&quot;Total from previous pages :&quot;}}"/>
+                                    <REFERENCEBOX name="ReferenceBox3" width="min" alignment="baseline" baselineType="leftleft" floatingBehavior="enclosed" textAlignment="left" referenceName="ordertotal" referencePrevious="true" referenceAttribute="value" referenceDefault="-"/>
+                                </LAYOUTNODE>
+                            </LAYOUTNODE>
+                            <MINIPAGE name="Spacer008" width=".2cm" layoutDirection="leftToRight"/>
+                        </LAYOUTNODE>
+                        <LAYOUTNODE name="AnyPageFooter" width="min" length="min" port="anyPageFooter" floatingBehavior="enclosed">
+                            <MINIPAGE name="Spacer009" width=".5cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="Line001" width="0.01cm" bgColor="#0" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="Spacer010" width=".2cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="PageNoLine" width="min" layoutDirection="leftToRight" swapX="true">
+                                <WORDBOX name="PrintedWithGRW" alignment="center" fontSize="8" fontItalic="true" baselineType="leftleft" text="Printed with Genero Report Writer"/>
+                                <PAGENOBOX name="PageNoBox" y="max-1cm" anchorY="1" alignment="baseline" baselineType="leftleft" textAlignment="right" textExpression="&quot;Page &quot;+format(getPageNumber(&quot;user_page&quot;),ARABIC)+&quot; of &quot;+format(getTotalNumberOfPages(&quot;user_page&quot;),ARABIC)"/>
+                            </MINIPAGE>
+                        </LAYOUTNODE>
+                        <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                            <MINIPAGE name="orderid_page" width="max" length="min" lengthAdjustment="shrinkToChildren" swapX="true" hidePageFooterOnLastPage="true">
+                                <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                    <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                                        <MINIPAGE name="OrderList" width="min" length="max" layoutDirection="leftToRight">
+                                            <WORDBOX name="Separator03" alignment="baseline" baselineType="leftleft" port="itemSeparator" text=" "/>
+                                            <LAYOUTNODE name="prod_picture" width="min" length="2.5cm" layoutDirection="leftToRight">
+                                                <rtl:input-variable name="orderline.product.prodpic" type="FGLString" expectedLocation="expectedHere"/>
+                                                <IMAGEBOX name="ImageBox2" y="1.5cm" length="1cm" url="{{&quot;./images/database/&quot;+orderline.product.prodpic.trim()}}" intendedResolution="96"/>
+                                            </LAYOUTNODE>
+                                            <rtl:input-variable name="orderline.lineitem.itemid" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="ItemID" width="width(&quot;WW-000-W&quot;)" alignment="baseline" baselineType="leftleft" textAlignment="left" text="{{orderline.lineitem.itemid.trim()}}"/>
+                                            <rtl:input-variable name="orderline.product.prodname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <rtl:input-variable name="orderline.item.attr1" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDWRAPBOX name="ProdNameAndDescription" width="5.5cm" alignment="baseline" baselineType="leftleft" text="{{orderline.product.prodname.trim()+(10).toChar()+orderline.item.attr1.trim()}}"/>
+                                            <rtl:input-variable name="orderline.lineitem.quantity" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <DECIMALFORMATBOX name="Quantity" width="max(width(&quot;000000&quot;),width(&quot;Quantity&quot;))" alignment="baseline" baselineType="leftleft" textAlignment="right" value="{{orderline.lineitem.quantity}}"/>
+                                            <rtl:input-variable name="orderline.lineitem.unitprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <DECIMALFORMATBOX name="UnitPrice" width="{max(width(&quot;{&quot;Unit Price&quot;.translate()}&quot;),width(&quot;000,000.00&quot;))}" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{orderline.lineitem.unitprice}}"/>
+                                            <rtl:input-variable name="lineitemprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <DECIMALFORMATBOX name="LineItemPrice" y="max-1cm" width="{max(width(&quot;{&quot;Total&quot;.translate()}&quot;),width(&quot;000,000.00&quot;))}" anchorY="1" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{lineitemprice}}"/>
+                                            <rtl:input-variable name="overalltotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <INFONODE name="overalltotal" value="{{overalltotal.toString()}}"/>
+                                            <rtl:input-variable name="ordertotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <INFONODE name="ordertotal" value="{{ordertotal.format(&quot;-,---,---,--&amp;.&amp;&amp;&quot;)}}"/>
+                                            <rtl:input-variable name="orderline.orders.orderid" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <rtl:input-variable name="orderline.orders.orderdate" type="FGLString" expectedLocation="expectedHere"/>
+                                            <rtl:input-variable name="orderline.orders.userid" type="FGLString" expectedLocation="expectedHere"/>
+                                            <INFONODE name="total_order_text" value="{{&quot;Total of order &quot;+orderline.orders.orderid+&quot; from &quot;+orderline.orders.orderdate.trim()+&quot; by &quot;+orderline.orders.userid.trim()+&quot; :&quot;}}"/>
+                                        </MINIPAGE>
+                                    </rtl:match>
+                                </rtl:match>
+                            </MINIPAGE>
+                        </rtl:match>
+                        <LAYOUTNODE name="GroupTotal" width="min" length="min" floatingBehavior="enclosed">
+                            <MINIPAGE name="Spacer011" width=".2cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="BlueLine005" width=".1cm" bgColor="#cc" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="Spacer012" width=".2cm" layoutDirection="leftToRight"/>
+                            <MINIPAGE name="TotalOrder" width="min" length="max" layoutDirection="leftToRight">
+                                <REFERENCEBOX name="ReferenceBox11" width="min" alignment="baseline" baselineType="leftleft" textAlignment="left" trimText="both" referenceName="total_order_text" referencePrevious="true" referenceAttribute="value" referenceDefault="-"/>
+                                <REFERENCEBOX name="ReferenceBox12" y="max-1cm" anchorY="1" alignment="baseline" baselineType="leftleft" floatingBehavior="enclosed" textAlignment="right" text="000,000.00" referenceName="ordertotal" referencePrevious="true" referenceAttribute="value" referenceDefault="-"/>
+                            </MINIPAGE>
+                        </LAYOUTNODE>
+                    </MINIPAGE>
+                </rtl:match>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

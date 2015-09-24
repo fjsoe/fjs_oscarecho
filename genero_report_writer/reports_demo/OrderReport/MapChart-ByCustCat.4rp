@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23204" version="5.00">
+    <report:Settings RWPageWidth="a4width" RWPageLength="a4length" RWLeftMargin="1.3cm" RWTopMargin="1.3cm" RWRightMargin="1.3cm" RWBottomMargin="1.3cm">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Revenue by Customers and Categories" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="MapChart Chart OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="MiniPage1" width="max" length="max">
+                    <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                        <rtl:input-variable name="orderline.orders.shipfirstname" type="FGLString" expectedLocation="expectedAhead"/>
+                        <rtl:input-variable name="orderline.orders.shiplastname" type="FGLString" expectedLocation="expectedAhead"/>
+                        <MAPCHART name="Mapchart2" length="max/2" title="{{orderline.orders.shipfirstname.trim()+&quot; &quot;+orderline.orders.shiplastname.trim()}}" keysTitle="Insert keys title here" valuesTitle="Insert values title here" drawAs="Ring">
+                            <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                    <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                                        <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                        <rtl:input-variable name="orderline.lineitem.unitprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                        <ITEM key="{{orderline.category.catname.trim()}}" value="{{orderline.lineitem.unitprice}}" name="Item2"/>
+                                    </rtl:match>
+                                </rtl:match>
+                            </rtl:match>
+                        </MAPCHART>
+                    </rtl:match>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

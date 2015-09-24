@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm fileVersion="23200" gstVersion="23205" name="Root" uid="{d3ee19c7-9df9-4fe7-ad4a-701198231867}">
+  <AGSettings/>
+  <Record active="false" additionalTables="" joinLeft="" joinOperator="" joinRight="" name="Undefined" order="" uid="{5b00123a-b579-47c5-b1a9-70be306b1eed}" where="">
+    <RecordField colName="" fieldIdRef="1" fieldType="NON_DATABASE" name="r_filename" sqlTabName="" table_alias_name="" uid="{2ea03b1b-3e11-4597-85e3-72396b9234f7}"/>
+    <RecordField colName="" fieldIdRef="2" fieldType="NON_DATABASE" name="r_output" sqlTabName="" table_alias_name="" uid="{4fdee5b8-ba4d-4d37-95d4-83272bcc58c9}"/>
+  </Record>
+  <Form gridHeight="11" gridWidth="58" name="Form1" text="Configuration">
+    <ActionDefaultList name="actiondefaultlist1">
+      <ActionDefault name="preview" text="Preview"/>
+      <ActionDefault name="saveOnDisk" text="Save on Disk"/>
+      <ActionDefault name="quit" text="Quit"/>
+    </ActionDefaultList>
+    <Grid gridHeight="10" gridWidth="54" name="gr2" posX="2" posY="0">
+      <Label colorCondition="black" gridHeight="1" gridWidth="9" justify="right" lstrcomment="false" lstrtext="false" name="lb1" posX="1" posY="1" text="Report File"/>
+      <ComboBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="r_filename" columnCount="" defaultValue="OrderReport" fieldId="1" gridHeight="1" gridWidth="34" items="OrderStock, GroupedTableDemo, TableDemo, StaticPivotTable, DynamicPivotTable, OrderReport, OrderList, OrderLabels, MasterReport, Mapchart Revenue by Customers and Category, Mapchart Revenue by Customers, Mapchart Revenue by Categories, ListDemo, Categorychart Revenue by Customers and Categories, Categorychart Revenue by Categories and Customers, Categorychart by Areas and Categories, Generic List" name="r_filename" posX="15" posY="1" rowCount="" sizePolicy="fixed" sqlTabName="formonly" sqlType="CHAR" stepX="" stepY="" tabIndex="3" table_alias_name="" widget="ComboBox">
+        <Item lstrtext="false" name="OrderStock" text="OrderStock"/>
+        <Item lstrtext="false" name="GroupedTableDemo" text="GroupedTableDemo"/>
+        <Item lstrtext="false" name="TableDemo" text="TableDemo"/>
+        <Item lstrtext="false" name="StaticPivotTable" text="StaticPivotTable"/>
+        <Item lstrtext="false" name="DynamicPivotTable" text="DynamicPivotTable"/>
+        <Item lstrtext="false" name="OrderReport" text="OrderReport"/>
+        <Item lstrtext="false" name="OrderList" text="OrderList"/>
+        <Item lstrtext="false" name="OrderLabels" text="OrderLabels"/>
+        <Item lstrtext="false" name="MasterReport" text="MasterReport"/>
+        <Item lstrtext="false" name="MapChart-ByCustCat" text="Mapchart Revenue by Customers and Category"/>
+        <Item lstrtext="false" name="MapChart-ByCust" text="Mapchart Revenue by Customers"/>
+        <Item lstrtext="false" name="MapChart-ByCat" text="Mapchart Revenue by Categories"/>
+        <Item lstrtext="false" name="ListDemo" text="ListDemo"/>
+        <Item lstrtext="false" name="CatChart-ByCustCat" text="Categorychart Revenue by Customers and Categories"/>
+        <Item lstrtext="false" name="CatChart-ByCatCust" text="Categorychart Revenue by Categories and Customers"/>
+        <Item lstrtext="false" name="CatChart-ByAreaCat" text="Categorychart by Areas and Categories"/>
+        <Item lstrtext="false" name="Generic List" text="Generic List"/>
+      </ComboBox>
+      <HLine gridWidth="50" name="hl2" posX="0" posY="2"/>
+      <Label colorCondition="black" gridHeight="1" gridWidth="9" justify="right" lstrtext="false" name="lb2" posX="1" posY="3" text="Output as"/>
+      <RadioGroup aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="r_output" columnCount="" defaultValue="PDF" fieldId="2" gridHeight="6" gridWidth="18" items="PDF, SVG, Excel XLS Spreadsheet, Excel XLSX Spreadsheet, RTF (MS-Word), HTML, Image" name="r_output" posX="15" posY="3" rowCount="" sqlTabName="formonly" sqlType="CHAR" stepX="" stepY="" tabIndex="1" table_alias_name="" widget="RadioGroup">
+        <Item lstrtext="false" name="PDF" text="PDF"/>
+        <Item lstrtext="false" name="SVG" text="SVG"/>
+        <Item lstrtext="false" name="XLS" text="Excel XLS Spreadsheet"/>
+        <Item lstrtext="false" name="XLSX" text="Excel XLSX Spreadsheet"/>
+        <Item lstrtext="false" name="RTF" text="RTF (MS-Word)"/>
+        <Item lstrtext="false" name="HTML" text="HTML"/>
+        <Item lstrtext="false" name="Image" text="Image"/>
+      </RadioGroup>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewAyAGUAYQAwADMAYgAxAGIALQAzAGUAMQAxAC0ANAA1ADkANwAtADgANQBlADMALQA3ADIAMwA5ADYAYgA5ADIAMwA0AGYANwB9QCAAAAgAAAFAQGZmbpmZmwAAAAAAAAAAAQAAAEwAewA0AGYAZABlAGUANQBiADgALQBiAGEANABkAC0ANABkADMANwAtADkANQBkADQALQA4ADMAMgA3ADIAYgBjAGMANQA4AGMAOQB9QCAAAAgAAAFASszM2jMzNQAAAAAAAAAAAQAAAEwAewA1AGIAMAAwADEAMgAzAGEALQBiADUANwA5AC0ANAA3AGMANQAtAGIAMQBhADkALQA3ADAAYgBlADMAMAA2AGIAMQBlAGUAZAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

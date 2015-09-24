@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ReportDataSample>
+    <report name="report_all_orders">
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.orderid" value="5"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.userid" value="bloggs                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.orderdate" value="01/25/2011"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shipfirstname" value="Fred                                                                            "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shiplastname" value="Bloggs                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shipaddr1" value="177 Elms Crescent                                                               "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shipaddr2" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shipcity" value="London                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shipstate" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shipzip" value="SW4 8AF             "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.shipcountry" value="GBR"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billfirstname" value="Fred                                                                            "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billlastname" value="Bloggs                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billaddr1" value="177 Elms Crescent                                                               "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billaddr2" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billcity" value="London                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billstate" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billzip" value="SW4 8AF             "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.billcountry" value="GBR"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.totalprice" value="1061.50"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.creditcard" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.exprdate" value="       "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.cardtype" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.orders.sourceapp" value="MTC"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.userid" value="bloggs                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.email" value="fred@bloggs.com                                                                 "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.firstname" value="Fred                                                                            "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.lastname" value="Bloggs                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.acstatus" value="OK"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.addr1" value="177 Elms Crescent                                                               "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.addr2" value="                                        "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.city" value="London                                                                          "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.state" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.zip" value="SW4 8AF             "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.country" value="GBR"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.phone" value="+44 (0) 184 386 9386                                                            "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.langpref" value="English                                                                         "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.favcategory" value="SUPPLIES  "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.mylistopt" value="1"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.banneropt" value="1"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.account.sourceapp" value="WEB"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.country.code" value="GBR"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.country.codedesc" value="United Kingdom                                    "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.lineitem.orderid" value="5"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.lineitem.linenum" value="10"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.lineitem.itemid" value="FU-004-A  "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.lineitem.quantity" value="1"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.lineitem.unitprice" value="1490.00"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.product.productid" value="FU-004    "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.product.catid" value="FURNITURE "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.product.prodname" value="Grandfather clock                                                               "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.product.proddesc" value="Grandfather clock                                                                                                                                                                                                                                              "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.product.prodpic" value="furniture/grandfather-clock.jpg                                                                                                                                                                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.category.catid" value="FURNITURE "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.category.catorder" value="1"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.category.catname" value="Furniture                                                                       "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.category.catdesc" value="                                                                                                                                                                                                                                                               "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.category.catpic" value="reception-desk.jpg                                                                                                                                                                                                                                             "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.itemid" value="FU-004-A  "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.productid" value="FU-004    "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.listprice" value="1490.00"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.unitcost" value="0.00"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.supplier" value="1"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.itstatus" value="P "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.attr1" value="Unit                                                                            "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.attr2" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.attr3" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.attr4" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.orderline.item.attr5" value="                                                                                "/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.lineitemprice" value="1490.00"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.overalltotal" value="1061.50"/>
+        <sample path="Report.Group.Group.Group.OnEveryRow.ordertotal" value="1061.50"/>
+    </report>
+</ReportDataSample>

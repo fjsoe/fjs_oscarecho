@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23207" version="5.00">
+    <report:Settings RWPageWidth="a1length" RWPageLength="a1width" RWLeftMargin="1.27cm" RWTopMargin="1.27cm" RWRightMargin="1.27cm" RWBottomMargin="1.27cm">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="DynamicColumnsTable.rdd" RWFglReportName="DynamicColumnTableReport"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML>
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page Root" width="max" length="max">
+                    <rtl:match name="Group k" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                        <rtl:match name="BeforeGroup k" nameConstraint="BeforeGroup" minOccurs="1" maxOccurs="1">
+                            <TABLE name="Table" floatingBehavior="enclosed" rule="1" border="1">
+                                <COLDEFS name="Column Definition Section">
+                                    <COLDEF fWidth="10cm"/>
+                                    <rtl:match name="For" nameConstraint="For" minOccurs="1" maxOccurs="1">
+                                        <rtl:match name="ForItem" nameConstraint="ForItem" minOccurs="0" maxOccurs="unbounded">
+                                            <COLDEF pWidth="1"/>
+                                        </rtl:match>
+                                    </rtl:match>
+                                </COLDEFS>
+                                <THEAD type="any" name="Header Section">
+                                    <ROW name="Header Row">
+                                        <COL name="Static Directory Title Column" fontBold="true">
+                                            <WORDBOX name="Directory Title" floatingBehavior="enclosed" text="Directory"/>
+                                        </COL>
+                                        <rtl:match name="For" nameConstraint="For" minOccurs="1" maxOccurs="1">
+                                            <rtl:match name="ForItem" nameConstraint="ForItem" minOccurs="0" maxOccurs="unbounded">
+                                                <COL name="Dynamic Directory Suffix Column">
+                                                    <rtl:input-variable name="suffix" type="FGLString" expectedLocation="expectedHere"/>
+                                                    <WORDBOX name="Suffix Value" class="grwStringValue" fontBold="true" floatingBehavior="enclosed" text="{{suffix}}"/>
+                                                </COL>
+                                            </rtl:match>
+                                        </rtl:match>
+                                    </ROW>
+                                </THEAD>
+                                <TBODY name="Body Section">
+                                    <rtl:match name="While" nameConstraint="While" minOccurs="1" maxOccurs="1">
+                                        <rtl:match name="WhileItem" nameConstraint="WhileItem" minOccurs="0" maxOccurs="unbounded">
+                                            <rtl:match name="If" nameConstraint="If" minOccurs="1" maxOccurs="1">
+                                                <rtl:match name="IfThen" nameConstraint="IfThen" minOccurs="0" maxOccurs="1">
+                                                    <ROW name="Directory Row">
+                                                        <COL name="Static Directory Value Column">
+                                                            <rtl:input-variable name="directory" type="FGLString" expectedLocation="expectedHere"/>
+                                                            <WORDWRAPBOX name="Directory Value" class="grwStringValue" width="max" floatingBehavior="enclosed" text="{{directory}}"/>
+                                                        </COL>
+                                                        <rtl:match name="For" nameConstraint="For" minOccurs="1" maxOccurs="1">
+                                                            <rtl:match name="ForItem" nameConstraint="ForItem" minOccurs="0" maxOccurs="unbounded">
+                                                                <COL name="Dynamic Directory Suffix Column 1">
+                                                                    <rtl:match name="While" nameConstraint="While" minOccurs="1" maxOccurs="1">
+                                                                        <rtl:match name="WhileItem" nameConstraint="WhileItem" minOccurs="0" maxOccurs="unbounded">
+                                                                            <rtl:match name="If" nameConstraint="If" minOccurs="1" maxOccurs="1">
+                                                                                <rtl:match name="IfThen" nameConstraint="IfThen" minOccurs="0" maxOccurs="1">
+                                                                                    <rtl:input-variable name="fileName" type="FGLString" expectedLocation="expectedHere"/>
+                                                                                    <WORDWRAPBOX name="fileName Value" class="grwStringValue" width="max" fontSize="8" floatingBehavior="enclosed" text="{{fileName}}"/>
+                                                                                </rtl:match>
+                                                                            </rtl:match>
+                                                                        </rtl:match>
+                                                                    </rtl:match>
+                                                                </COL>
+                                                            </rtl:match>
+                                                        </rtl:match>
+                                                    </ROW>
+                                                </rtl:match>
+                                            </rtl:match>
+                                        </rtl:match>
+                                    </rtl:match>
+                                </TBODY>
+                            </TABLE>
+                        </rtl:match>
+                    </rtl:match>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23207" version="5.00">
+    <report:Settings RWPageWidth="a4width" RWPageLength="a4length" RWLeftMargin="1.3cm" RWTopMargin="1.3cm" RWRightMargin="1.3cm" RWBottomMargin="1.3cm">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Form Example" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="Form OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page" width="max" length="max" layoutDirection="topToBottom" swapX="false">
+                    <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                        <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                            <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                                    <LAYOUTNODE name="Main Layout" width="max" length="max" anchorX="0" anchorY="0" fontName="Courier New" fontSize="18" layoutDirection="topToBottom" swapX="false">
+                                        <IMAGEBOX name="Template Image" x="max/2" y="0" width="10cm" length="13cm" anchorX="0.5" anchorY="0" layoutDirection="topToBottom" swapX="false" url="images/orderstock.png" intendedResolution="120">
+                                            <rtl:input-variable name="orderline.orders.shiplastname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="shiplastname Value" x="0.4cm" y="88.7603" anchorX="0" anchorY="0.5" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shiplastname.trim()}}"/>
+                                            <rtl:input-variable name="orderline.orders.shipfirstname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="shipfirstname Value" x="0.4cm" y="117.693" anchorX="0" anchorY="0.5" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipfirstname.trim()}}"/>
+                                            <rtl:input-variable name="orderline.orders.shipaddr1" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="shipaddr1 Value" x="0.4cm" y="139" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipaddr1.trim()}}"/>
+                                            <rtl:input-variable name="orderline.orders.shipcity" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="shipcity Value" x="0.4cm" y="195.05" anchorX="0" anchorY="0.5" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipcity.trim()}}"/>
+                                            <rtl:input-variable name="orderline.orders.shipstate" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="shipstate Value" x="251.992" y="196.458" width="26.1009" anchorX="0" anchorY="0.5" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipstate.trim()}}"/>
+                                            <rtl:input-variable name="orderline.product.productid" type="FGLString" expectedLocation="expectedHere"/>
+                                            <BARCODEBOX name="ProductIdCodeBox" x="65.2824" y="325.296" width="115.222" length="41.3625" anchorX="0" anchorY="0" layoutDirection="topToBottom" swapX="false" codeType="code-39" codeValue="{{orderline.product.productid}}" check="false"/>
+                                            <rtl:input-variable name="orderline.lineitem.quantity" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="quantity Value" x="227.552" y="328.444" width="52.1684" anchorX="0" anchorY="0" alignment="baseline" fontSize="10" baselineType="leftleft" textAlignment="right" text="{{orderline.lineitem.quantity.toString()}}"/>
+                                            <rtl:input-variable name="orderline.orders.orderdate" type="FGLString" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="orderdate Value" x="221.588" y="353.881" width="width(&quot;00-00-0000&quot;)" anchorX="0" anchorY="0" alignment="baseline" fontSize="10" baselineType="leftleft" text="{{orderline.orders.orderdate}}"/>
+                                            <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <IMAGEBOX name="checkFurniture" rtl:condition="orderline.category.catname.startsWith(&quot;Furniture&quot;)" x="16" y="236" anchorX="0.5" anchorY="0.5" url="images/yes.png" intendedResolution="120"/>
+                                            <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <IMAGEBOX name="checkDecor" rtl:condition="orderline.category.catname.startsWith(&quot;Office Decor&quot;)" x="16" y="250" anchorX="0.5" anchorY="0.5" url="images/yes.png" intendedResolution="120"/>
+                                            <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <IMAGEBOX name="checkEntertainement" rtl:condition="orderline.category.catname.startsWith(&quot;Entertainment&quot;)" x="16" y="264" anchorX="0.5" anchorY="0.5" url="images/yes.png" intendedResolution="120"/>
+                                            <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <IMAGEBOX name="checkSupplies" rtl:condition="orderline.category.catname.startsWith(&quot;Supplies&quot;)" x="16" y="278" anchorX="0.5" anchorY="0.5" url="images/yes.png" intendedResolution="120"/>
+                                            <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <IMAGEBOX name="checkTravelling" rtl:condition="orderline.category.catname.startsWith(&quot;Travelling&quot;)" x="16" y="292" anchorX="0.5" anchorY="0.5" url="images/yes.png" intendedResolution="120"/>
+                                            <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                            <IMAGEBOX name="checkOther" rtl:condition="!orderline.category.catname.startsWith(&quot;Furniture&quot;)&amp;&amp;!orderline.category.catname.startsWith(&quot;Office Decor&quot;)&amp;&amp;!orderline.category.catname.startsWith(&quot;Entertainment&quot;)&amp;&amp;!orderline.category.catname.startsWith(&quot;Supplies&quot;)&amp;&amp;!orderline.category.catname.startsWith(&quot;Travelling&quot;)" x="16" y="306" anchorX="0.5" anchorY="0.5" url="images/yes.png" intendedResolution="120"/>
+                                            <IMAGEBOX name="ImageBox1_1" x="136.719" y="75.7739" width="143.674" anchorX="0" anchorY="1" floatingBehavior="enclosed" url="images/office_logo.png" intendedResolution="300"/>
+                                        </IMAGEBOX>
+                                    </LAYOUTNODE>
+                                </rtl:match>
+                            </rtl:match>
+                        </rtl:match>
+                    </rtl:match>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

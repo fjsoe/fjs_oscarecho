@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23204" version="5.00">
+    <report:Settings RWPageWidth="a4length" RWPageLength="a4width" RWLeftMargin="1.3cm" RWTopMargin="1.3cm" RWRightMargin="1.3cm" RWBottomMargin="1.3cm">
+        <report:FormatList>
+            <report:Format-PDF/>
+            <report:Format-image/>
+            <report:Format-SVG/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Plain List Demonstration" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="List OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="thePage" width="max" length="max" fontName="SansSerif" fontSize="10">
+                    <LAYOUTNODE name="Layout Node1" width="max" length="min" port="anyPageHeader">
+                        <MINIPAGE name="StripeLayouter1" width="1point" length="max" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter2" width="0.5point" length="max" bgColor="black" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter3" width="1point" length="max" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter4" width="0.5point" length="max" bgColor="black" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter5" width="1point" length="max" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter6" width="min" length="max" layoutDirection="leftToRight">
+                            <WORDBOX name="WordBox1" alignment="baseline" baselineType="leftleft" text="Company: "/>
+                            <LAYOUTNODE name="Layout Node2" y="width(&quot;Company&quot;)" width="min" length="min" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                <WORDBOX name="WordBox2" width="width(&quot;-0000000000&quot;)" alignment="baseline" baselineType="leftleft" textAlignment="right" text="          1"/>
+                                <WORDBOX name="WordBox3" alignment="baseline" baselineType="leftleft" text=" "/>
+                                <WORDBOX name="WordBox4" alignment="baseline" baselineType="leftleft" text="Office Supplies"/>
+                            </LAYOUTNODE>
+                            <WORDBOX name="WordBox5" y="max/2" anchorY="0.5" alignment="baseline" fontItalic="true" baselineType="leftleft" floatingBehavior="enclosed" text="- C u s t o m e r s -"/>
+                            <LAYOUTNODE name="Layout Node3" y="max" width="min" length="min" anchorY="1" layoutDirection="rightToLeft" floatingBehavior="enclosed">
+                                <PAGENOBOX name="PageNoBox1" alignment="baseline" baselineType="leftleft" textAlignment="right" pageName="thePage"/>
+                                <WORDBOX name="WordBox6" alignment="baseline" baselineType="leftleft" text="Page: "/>
+                                <WORDBOX name="WordBox7" alignment="baseline" baselineType="leftleft" text="2003-08-14"/>
+                            </LAYOUTNODE>
+                        </MINIPAGE>
+                        <MINIPAGE name="StripeLayouter7" width="min" length="max" layoutDirection="leftToRight">
+                            <WORDBOX name="WordBox8" alignment="baseline" baselineType="leftleft" text="User: "/>
+                            <LAYOUTNODE name="Layout Node4" y="width(&quot;Company&quot;)" width="min" length="min" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                <WORDBOX name="WordBox9" width="width(&quot;-0000000000&quot;)" alignment="baseline" baselineType="leftleft" textAlignment="right" text="         12"/>
+                                <WORDBOX name="WordBox10" alignment="baseline" baselineType="leftleft" text=" "/>
+                                <WORDBOX name="WordBox11" alignment="baseline" baselineType="leftleft" text="A. Smith"/>
+                            </LAYOUTNODE>
+                            <WORDBOX name="WordBox12" y="max/2" anchorY="0.5" alignment="baseline" fontItalic="true" baselineType="leftleft" floatingBehavior="enclosed" text="ordered ascending by number"/>
+                        </MINIPAGE>
+                        <MINIPAGE name="StripeLayouter8" width="1point" length="max" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter9" width="0.5point" length="max" bgColor="black" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter10" width="1point" length="max" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter11" width="0.5point" length="max" bgColor="black" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter12" width="1point" length="max" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="Column Titles" width="min" length="max" layoutDirection="leftToRight">
+                            <WORDBOX name="Spacer1" port="itemSeparator" floatingBehavior="enclosed" text=" "/>
+                            <LAYOUTNODE name="Indent1" width="1" length="14.2264" layoutDirection="leftToRight" floatingBehavior="enclosed"/>
+                            <WORDBOX name="orderline.lineitem.itemid Caption" width="{max(width(&quot;{&quot;Itemid&quot;.translate()}&quot;),width(&quot;M&quot;)*10)}" alignment="baseline" floatingBehavior="enclosed" text="Itemid" localizeText="true"/>
+                            <WORDBOX name="orderline.product.prodname Caption" width="{max(width(&quot;{&quot;Prodname&quot;.translate()}&quot;),width(&quot;M&quot;)*20)}" floatingBehavior="enclosed" text="Prodname" localizeText="true"/>
+                            <WORDBOX name="orderline.product.proddesc Caption" width="{max(width(&quot;{&quot;Proddesc&quot;.translate()}&quot;),width(&quot;M&quot;)*20)}" alignment="baseline" floatingBehavior="enclosed" text="Proddesc" localizeText="true"/>
+                            <WORDBOX name="orderline.lineitem.quantity Caption" width="{max(width(&quot;{&quot;Quantity&quot;.translate()}&quot;),width(&quot;-0000000000&quot;))}" floatingBehavior="enclosed" textAlignment="right" text="Quantity" localizeText="true"/>
+                            <WORDBOX name="orderline.lineitem.unitprice Caption" width="{max(width(&quot;{&quot;Unitprice&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" floatingBehavior="enclosed" textAlignment="right" text="Unitprice" localizeText="true"/>
+                            <WORDBOX name="lineitemprice Caption" y="max" width="{max(width(&quot;{&quot;Lineitemprice&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" anchorY="1" floatingBehavior="enclosed" textAlignment="right" text="Total" localizeText="true"/>
+                        </MINIPAGE>
+                        <MINIPAGE name="StripeLayouter14" width="1point" length="max" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter15" width="0.5point" length="max" bgColor="black" layoutDirection="leftToRight"/>
+                        <MINIPAGE name="StripeLayouter16" width="1point" length="max" layoutDirection="leftToRight"/>
+                    </LAYOUTNODE>
+                    <LAYOUTNODE name="Layout Node6" width="min" length="max" widthAdjustment="shrinkToChildren" layoutDirection="leftToRight" swapX="false" port="anyPageFooter">
+                        <PAGENOBOX name="PageNoBox2" alignment="baseline" layoutDirection="topToBottom" swapX="false" baselineType="leftleft" textAlignment="right"/>
+                        <REFERENCEBOX name="Overall Total Reference" y="max" anchorY="1" alignment="baseline" layoutDirection="topToBottom" swapX="false" baselineType="leftleft" textAlignment="right" text="000,000.00" referenceName="Overall Total" referencePrevious="true" referenceAttribute="value"/>
+                    </LAYOUTNODE>
+                    <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                        <MINIPAGE name="Group Header" width="min" length="max" layoutDirection="leftToRight">
+                            <rtl:input-variable name="orderline.orders.shipfirstname" type="FGLString" expectedLocation="expectedAhead"/>
+                            <rtl:input-variable name="orderline.orders.shiplastname" type="FGLString" expectedLocation="expectedAhead"/>
+                            <rtl:input-variable name="orderline.orders.shipcity" type="FGLString" expectedLocation="expectedAhead"/>
+                            <WORDBOX name="orderline.orders.useid Value" floatingBehavior="enclosed" text="{{orderline.orders.shipfirstname.trim()+&quot;  &quot;+orderline.orders.shiplastname.trim()+&quot;, &quot;+orderline.orders.shipcity.trim()}}"/>
+                        </MINIPAGE>
+                        <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                            <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded"/>
+                                <MINIPAGE name="Data Row" width="min" length="max" layoutDirection="leftToRight" swapX="false">
+                                    <WORDBOX name="Spacer2" port="itemSeparator" floatingBehavior="enclosed" text=" "/>
+                                    <LAYOUTNODE name="Indent2" width="1" length="5mm" layoutDirection="leftToRight" floatingBehavior="enclosed"/>
+                                    <rtl:input-variable name="orderline.lineitem.itemid" type="FGLString" expectedLocation="expectedBefore"/>
+                                    <WORDBOX name="orderline.lineitem.itemid Value" width="{max(width(&quot;{&quot;Itemid&quot;.translate()}&quot;),width(&quot;M&quot;)*10)}" floatingBehavior="enclosed" text="{{orderline.lineitem.itemid}}"/>
+                                    <rtl:input-variable name="orderline.product.prodname" type="FGLString" expectedLocation="expectedBefore"/>
+                                    <WORDWRAPBOX name="orderline.product.prodname Value" width="width(&quot;M&quot;)*20" floatingBehavior="enclosed" text="{{orderline.product.prodname}}"/>
+                                    <rtl:input-variable name="orderline.product.proddesc" type="FGLString" expectedLocation="expectedBefore"/>
+                                    <WORDWRAPBOX name="orderline.product.proddesc Value" width="width(&quot;M&quot;)*20" floatingBehavior="enclosed" text="{{orderline.product.proddesc}}"/>
+                                    <rtl:input-variable name="orderline.lineitem.quantity" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                    <DECIMALFORMATBOX name="orderline.lineitem.quantity Value" width="{max(width(&quot;{&quot;Quantity&quot;.translate()}&quot;),width(&quot;-0000000000&quot;))}" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="----------#" value="{{orderline.lineitem.quantity}}"/>
+                                    <rtl:input-variable name="orderline.lineitem.unitprice" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                    <DECIMALFORMATBOX name="orderline.lineitem.unitprice Value" width="{max(width(&quot;{&quot;Unitprice&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{orderline.lineitem.unitprice}}"/>
+                                    <rtl:input-variable name="lineitemprice" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                    <DECIMALFORMATBOX name="lineitemprice Value" y="max" width="{max(width(&quot;{&quot;Lineitemprice&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" anchorX="1" anchorY="1" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{lineitemprice}}"/>
+                                    <rtl:input-variable name="overalltotal" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                    <INFONODE name="Overall Total" value="{{overalltotal.format(&quot;-,---,---,--&amp;.&amp;&amp;&quot;)}}"/>
+                                </MINIPAGE>
+                            </rtl:match>
+                        </rtl:match>
+                    </rtl:match>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

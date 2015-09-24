@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23205" version="5.00">
+    <report:Settings RWPageWidth="letterlength" RWPageLength="letterwidth" RWLeftMargin="0.5inch" RWTopMargin="0.5inch" RWRightMargin="0.5inch" RWBottomMargin="0.5inch">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Grouped Table Demonstration" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="Table OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page Root" width="max" length="max">
+                    <TABLE name="Table" floatingBehavior="enclosed" rule="1" border="1" tBorder="2" bBorder="2" lBorder="2" rBorder="2">
+                        <COLDEFS name="Column definitions">
+                            <COLDEF pWidth="1.37805" fWidth="137.768"/>
+                            <COLDEF fWidth="72.991" hAlign="right"/>
+                            <COLDEF fWidth="{max(width(&quot;{&quot;Unitprice&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" hAlign="right"/>
+                            <COLDEF fWidth="{max(width(&quot;{&quot;Listprice&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" hAlign="right"/>
+                            <COLDEF fWidth="{max(width(&quot;{&quot;Unitcost&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" hAlign="right"/>
+                            <COLDEF fWidth="{max(width(&quot;{&quot;Lineitemprice&quot;.translate()}&quot;),width(&quot;-0,000,000,000.00&quot;))}" hAlign="right"/>
+                            <COLDEF pWidth="1" hAlign="right"/>
+                        </COLDEFS>
+                        <THEAD type="any" name="Header">
+                            <ROW name="Title row">
+                                <COL name="Title cell" colspan="6" hAlign="center">
+                                    <WORDBOX name="Title text" fontBold="true" floatingBehavior="enclosed" text="Shipment list"/>
+                                </COL>
+                            </ROW>
+                            <ROW name="Column titles row" fontBold="true">
+                                <COL name="Customer title cell">
+                                    <WORDBOX name="Customer title text" class="grwTableStringColumnTitle" floatingBehavior="enclosed" text="Customer" localizeText="true"/>
+                                </COL>
+                                <COL name="Order title cell">
+                                    <WORDBOX name="Order title text" class="grwTableNumericColumnTitle" floatingBehavior="enclosed" textAlignment="right" text="Order" localizeText="true"/>
+                                </COL>
+                                <COL name="Unitprice title cell">
+                                    <WORDBOX name="Unitprice title text" class="grwTableNumericColumnTitle" floatingBehavior="enclosed" textAlignment="right" text="Unitprice" localizeText="true"/>
+                                </COL>
+                                <COL name="Listprice title cell">
+                                    <WORDBOX name="Listprice title text" class="grwTableNumericColumnTitle" floatingBehavior="enclosed" textAlignment="right" text="Listprice" localizeText="true"/>
+                                </COL>
+                                <COL name="Unitcost title cell">
+                                    <WORDBOX name="Unitcost title text" class="grwTableNumericColumnTitle" floatingBehavior="enclosed" textAlignment="right" text="Unitcost" localizeText="true"/>
+                                </COL>
+                                <COL name="Lineitemprice title cell">
+                                    <WORDBOX name="Lineitemprice title text" class="grwTableNumericColumnTitle" floatingBehavior="enclosed" textAlignment="right" text="Lineitemprice" localizeText="true"/>
+                                </COL>
+                                <COL name="Status title cell">
+                                    <WORDBOX name="Status title text" class="grwTableStringColumnTitle" floatingBehavior="enclosed" text="Status" localizeText="true"/>
+                                </COL>
+                            </ROW>
+                        </THEAD>
+                        <TBODY name="Body">
+                            <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                <ROW name="Customer group title row">
+                                    <COL name="Customer group title cell" colspan="6">
+                                        <rtl:input-variable name="orderline.orders.userid" type="FGLString" expectedLocation="expectedAhead"/>
+                                        <rtl:input-variable name="orderline.orders.shipfirstname" type="FGLString" expectedLocation="expectedAhead"/>
+                                        <rtl:input-variable name="orderline.orders.shiplastname" type="FGLString" expectedLocation="expectedAhead"/>
+                                        <rtl:input-variable name="orderline.orders.shipzip" type="FGLString" expectedLocation="expectedAhead"/>
+                                        <WORDWRAPBOX name="Customer group title value" class="grwTableStringColumnValue" width="max" floatingBehavior="enclosed" text="{{&quot;Customer: &quot;+orderline.orders.userid.trim()+&quot;, shipped to: &quot;+orderline.orders.shipfirstname.trim()+&quot; &quot;+orderline.orders.shiplastname.trim()+&quot; in &quot;+orderline.orders.shipzip.trim()}}"/>
+                                    </COL>
+                                </ROW>
+                                <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                    <ROW name="Order group title row">
+                                        <COL name="Order group empty first cell"/>
+                                        <COL name="Order group title cell" colspan="5" hAlign="left">
+                                            <rtl:input-variable name="orderline.orders.orderid" type="FGLNumeric" expectedLocation="expectedAhead"/>
+                                            <rtl:input-variable name="orderline.orders.orderdate" type="FGLString" expectedLocation="expectedAhead"/>
+                                            <WORDBOX name="Order group title value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" text="{{&quot;Order &quot;+orderline.orders.orderid.format(&quot;---#&quot;)+&quot; from &quot;+orderline.orders.orderdate.trim()}}"/>
+                                        </COL>
+                                    </ROW>
+                                    <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                        <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                                            <ROW name="Data detail row">
+                                                <COL name="Data detail empty first cell"/>
+                                                <COL name="Data detail empty second cell"/>
+                                                <COL name="Unitprice value cell">
+                                                    <rtl:input-variable name="orderline.lineitem.unitprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="orderline.lineitem.unitprice Value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{orderline.lineitem.unitprice}}"/>
+                                                </COL>
+                                                <COL name="Listprice value cell">
+                                                    <rtl:input-variable name="orderline.item.listprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="orderline.item.listprice Value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{orderline.item.listprice}}"/>
+                                                </COL>
+                                                <COL name="Unitcost value cell">
+                                                    <rtl:input-variable name="orderline.item.unitcost" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="orderline.item.unitcost Value" class="grwTableNumericColumnValue" length="min" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{orderline.item.unitcost}}"/>
+                                                </COL>
+                                                <COL name="Lineitemprice value cell">
+                                                    <rtl:input-variable name="lineitemprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="lineitemprice Value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{lineitemprice}}"/>
+                                                </COL>
+                                                <COL name="Status value cell">
+                                                    <rtl:input-variable name="orderline.item.itstatus" type="FGLString" expectedLocation="expectedHere"/>
+                                                    <WORDBOX name="orderline.item.itstatus Value" class="grwStringValue" length="min" floatingBehavior="enclosed" text="{{orderline.item.itstatus}}"/>
+                                                </COL>
+                                            </ROW>
+                                        </rtl:match>
+                                    </rtl:match>
+                                    <ROW name="Order group total row">
+                                        <COL name="Order group total empty first cell"/>
+                                        <COL name="Order group total title cell" colspan="3" hAlign="left">
+                                            <rtl:input-variable name="orderline.orders.orderid" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                            <rtl:input-variable name="orderline.orders.orderdate" type="FGLString" expectedLocation="expectedBefore"/>
+                                            <WORDBOX name="Order group total title value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" text="{{&quot;Total of order &quot;+orderline.orders.orderid.format(&quot;---#&quot;)+&quot; from &quot;+orderline.orders.orderdate.trim()}}"/>
+                                        </COL>
+                                        <COL name="Order group total lineitemprice cell">
+                                            <rtl:input-variable name="ordertotal" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                            <DECIMALFORMATBOX name="ordertotal Value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{ordertotal}}"/>
+                                        </COL>
+                                        <COL name="Order group total empty status cell"/>
+                                    </ROW>
+                                </rtl:match>
+                                <ROW name="Customer group total row">
+                                    <COL name="Customer group total title cell" colspan="4">
+                                        <rtl:input-variable name="orderline.orders.userid" type="FGLString" expectedLocation="expectedBefore"/>
+                                        <rtl:input-variable name="orderline.orders.shipfirstname" type="FGLString" expectedLocation="expectedBefore"/>
+                                        <rtl:input-variable name="orderline.orders.shiplastname" type="FGLString" expectedLocation="expectedBefore"/>
+                                        <rtl:input-variable name="orderline.orders.shipzip" type="FGLString" expectedLocation="expectedBefore"/>
+                                        <WORDBOX name="Customer group total title value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" text="{{&quot;Total of customer: &quot;+orderline.orders.userid.trim()+&quot;, shipped to: &quot;+orderline.orders.shipfirstname.trim()+&quot; &quot;+orderline.orders.shiplastname.trim()+&quot; in &quot;+orderline.orders.shipzip.trim()}}"/>
+                                    </COL>
+                                    <COL name="Customer group total lineitemprice cell">
+                                        <rtl:input-variable name="usertotal" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                        <DECIMALFORMATBOX name="usertotal Value1" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{usertotal}}"/>
+                                    </COL>
+                                    <COL name="Order group total empty status cell1"/>
+                                </ROW>
+                            </rtl:match>
+                            <ROW name="Grand total row">
+                                <COL name="Grand total title cell" colspan="4">
+                                    <WORDBOX name="Grand total title string" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" text="Grand total:"/>
+                                </COL>
+                                <COL name="Grand total lineitemprice cell">
+                                    <rtl:input-variable name="overalltotal" type="FGLNumeric" expectedLocation="expectedBefore"/>
+                                    <DECIMALFORMATBOX name="overalltotal Value" class="grwTableNumericColumnValue" floatingBehavior="enclosed" textAlignment="right" format="-,---,---,--&amp;.&amp;&amp;" value="{{overalltotal}}"/>
+                                </COL>
+                                <COL name="Grand total empty status cell"/>
+                            </ROW>
+                        </TBODY>
+                    </TABLE>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

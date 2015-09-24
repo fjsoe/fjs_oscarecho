@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23207" version="5.00">
+    <report:Settings RWPageWidth="a4length" RWPageLength="a4width" RWLeftMargin="0.5inch" RWTopMargin="0.5inch" RWRightMargin="0.5inch" RWBottomMargin="0.5inch">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="Calendar.rdd" RWFglReportName="calendarReport"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML>
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page Root" width="max" length="max">
+                    <LAYOUTNODE name="Vertical Spacer" width="1" length="3mm" port="itemSeparator" floatingBehavior="enclosed"/>
+                    <LAYOUTNODE name="Header" width="max" length="121.769" floatingBehavior="enclosed">
+                        <rtl:input-variable name="yearValue" type="FGLNumeric" expectedLocation="expectedAhead"/>
+                        <DECIMALFORMATBOX name="yearValue Value" class="grwNumericValue" width="width(&quot;00000&quot;)" anchorX="1" alignment="baseline" fontSize="20" floatingBehavior="enclosed" textAlignment="right" format="####" value="{{yearValue}}"/>
+                        <LAYOUTNODE name="Employee Data" x="92.3934" y="1.7cm" width="min" length="min" floatingBehavior="enclosed">
+                            <rtl:input-variable name="employeeName" type="FGLString" expectedLocation="expectedAhead"/>
+                            <WORDBOX name="Employee" floatingBehavior="enclosed" text="{{&quot;Employee: &quot;+employeeName}}"/>
+                            <rtl:input-variable name="workingHoursText" type="FGLString" expectedLocation="expectedAhead"/>
+                            <WORDBOX name="Working Hours" floatingBehavior="enclosed" text="{{workingHoursText}}"/>
+                        </LAYOUTNODE>
+                        <LAYOUTNODE name="Legend" x="max" y="0" width="min" length="min" anchorX="1" anchorY="0" layoutDirection="topToBottom" floatingBehavior="enclosed">
+                            <LAYOUTNODE name="Legend Row 1" width="min" length="5cm" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                <WORDBOX name="Annual Leave" alignment="center" floatingBehavior="enclosed" text="Annual Leave"/>
+                                <LAYOUTNODE name="Color Box" y="max" width="6mm" length="6mm" anchorX="0" anchorY="1" bgColor="#649012" floatingBehavior="enclosed" borderWidth="1" borderStyle="solid"/>
+                            </LAYOUTNODE>
+                            <LAYOUTNODE name="Legend Row 2" width="min" length="5cm" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                <WORDBOX name="Staff Training" alignment="center" floatingBehavior="enclosed" text="Staff Training"/>
+                                <LAYOUTNODE name="Color Box 1" y="max" width="6mm" length="6mm" anchorX="0" anchorY="1" bgColor="#ffff7f" floatingBehavior="enclosed" borderWidth="1" borderTopWidth="0" borderRightWidth="1" borderBottomWidth="1" borderLeftWidth="1" borderStyle="solid"/>
+                            </LAYOUTNODE>
+                            <LAYOUTNODE name="Legend Row 3" width="min" length="5cm" layoutDirection="leftToRight" floatingBehavior="enclosed">
+                                <WORDBOX name="Not Available to Work" alignment="center" floatingBehavior="enclosed" text="Not Available to Work"/>
+                                <LAYOUTNODE name="Color Box 2" y="max" width="6mm" length="6mm" anchorX="0" anchorY="1" bgColor="#ffca95" floatingBehavior="enclosed" borderWidth="1" borderTopWidth="0" borderRightWidth="1" borderBottomWidth="1" borderLeftWidth="1" borderStyle="solid"/>
+                            </LAYOUTNODE>
+                        </LAYOUTNODE>
+                    </LAYOUTNODE>
+                    <MINIPAGE name="Calendar Row" width="min" length="max" layoutDirection="leftToRight">
+                        <LAYOUTNODE name="Horizontal Spacer" width="3mm" length="1" port="itemSeparator" floatingBehavior="enclosed"/>
+                        <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                            <TABLE name="Month Table" width="(max-3*3mm)/4" fontSize="10" floatingBehavior="enclosed" rule="1" border="1">
+                                <COLDEFS name="Coldefs1">
+                                    <COLDEF pWidth="1"/>
+                                    <COLDEF pWidth="1"/>
+                                    <COLDEF pWidth="1"/>
+                                    <COLDEF pWidth="1"/>
+                                    <COLDEF pWidth="1"/>
+                                    <COLDEF pWidth="1"/>
+                                    <COLDEF pWidth="1"/>
+                                </COLDEFS>
+                                <THEAD type="any" name="Head1">
+                                    <ROW name="Month Name Title Row">
+                                        <COL name="Col" colspan="6" hPadding="1mm">
+                                            <rtl:input-variable name="yearValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <rtl:input-variable name="monthValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <WORDBOX name="monthName Value" class="grwStringValue" fontBold="true" floatingBehavior="enclosed" text="{{Date.fromIsoValue(yearValue.format(&quot;####&quot;)+&quot;-&quot;+monthValue.format(&quot;##&quot;)+&quot;-01&quot;).format(&quot;MMMM&quot;)}}"/>
+                                        </COL>
+                                    </ROW>
+                                    <ROW name="Weekday Titles Row">
+                                        <COL name="Mon Title Column" hAlign="{{Runtime.producingExcelOutput()?HAlign.Left:HAlign.Center}}">
+                                            <WORDBOX name="Mon Title" fontBold="true" floatingBehavior="enclosed" text="Mon"/>
+                                        </COL>
+                                        <COL name="Tue Title Column" hAlign="{{Runtime.producingExcelOutput()?HAlign.Left:HAlign.Center}}">
+                                            <WORDBOX name="Tue Title" fontBold="true" floatingBehavior="enclosed" text="Tue"/>
+                                        </COL>
+                                        <COL name="Wed Title Column" hAlign="{{Runtime.producingExcelOutput()?HAlign.Left:HAlign.Center}}">
+                                            <WORDBOX name="Wed Title" fontBold="true" floatingBehavior="enclosed" text="Wed"/>
+                                        </COL>
+                                        <COL name="Thu Title Column" hAlign="{{Runtime.producingExcelOutput()?HAlign.Left:HAlign.Center}}">
+                                            <WORDBOX name="Thu Title" fontBold="true" floatingBehavior="enclosed" text="Thu"/>
+                                        </COL>
+                                        <COL name="Fri Title Column" hAlign="{{Runtime.producingExcelOutput()?HAlign.Left:HAlign.Center}}">
+                                            <WORDBOX name="Fri Title" fontBold="true" floatingBehavior="enclosed" text="Fri"/>
+                                        </COL>
+                                        <COL name="Sat Title Column" hAlign="{{Runtime.producingExcelOutput()?HAlign.Left:HAlign.Center}}">
+                                            <WORDBOX name="Sat Title" fontBold="true" floatingBehavior="enclosed" text="Sat"/>
+                                        </COL>
+                                        <COL name="Sun Title Column" hAlign="{{Runtime.producingExcelOutput()?HAlign.Left:HAlign.Center}}">
+                                            <WORDBOX name="Sun Title" fontBold="true" floatingBehavior="enclosed" text="Sun"/>
+                                        </COL>
+                                    </ROW>
+                                </THEAD>
+                                <TBODY name="Body1">
+                                    <rtl:match name="For" nameConstraint="For" minOccurs="1" maxOccurs="1">
+                                        <rtl:match name="ForItem" nameConstraint="ForItem" minOccurs="0" maxOccurs="unbounded">
+                                            <ROW name="Week Data Row" fontSize="8">
+                                                <rtl:input-variable name="monState" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <rtl:input-variable name="monDim" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <COL name="Mon Data Column" color="{{monDim==1?Color.GRAY:null}}" bgColor="{{monState==1?monDim==1?Color.fromRGBA(184,235,88,255):Color.fromRGBA(100,144,18,255):monState==2?monDim==1?Color.fromRGBA(255,235,215,255):Color.fromRGBA(255,202,149,255):monState==3?monDim==1?Color.fromRGBA(255,255,187,255):Color.fromRGBA(255,255,128,255):monState==4?monDim==1?Color.fromRGBA(250,250,250,255):Color.LIGHT_GRAY:null}}">
+                                                    <rtl:input-variable name="monValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="monValue Value" class="grwTableNumericColumnValue" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="--#" value="{{monValue}}"/>
+                                                </COL>
+                                                <rtl:input-variable name="tueState" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <rtl:input-variable name="tueDim" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <COL name="Tue Data Column" color="{{tueDim==1?Color.GRAY:null}}" bgColor="{{tueState==1?tueDim==1?Color.fromRGBA(184,235,88,255):Color.fromRGBA(100,144,18,255):tueState==2?tueDim==1?Color.fromRGBA(255,235,215,255):Color.fromRGBA(255,202,149,255):tueState==3?tueDim==1?Color.fromRGBA(255,255,187,255):Color.fromRGBA(255,255,128,255):tueState==4?tueDim==1?Color.fromRGBA(250,250,250,255):Color.LIGHT_GRAY:null}}">
+                                                    <rtl:input-variable name="tueValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="tueValue Value" class="grwTableNumericColumnValue" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="--#" value="{{tueValue}}"/>
+                                                </COL>
+                                                <rtl:input-variable name="wedState" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <rtl:input-variable name="wedDim" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <COL name="Wed Data Column" color="{{wedDim==1?Color.GRAY:null}}" bgColor="{{wedState==1?wedDim==1?Color.fromRGBA(184,235,88,255):Color.fromRGBA(100,144,18,255):wedState==2?wedDim==1?Color.fromRGBA(255,235,215,255):Color.fromRGBA(255,202,149,255):wedState==3?wedDim==1?Color.fromRGBA(255,255,187,255):Color.fromRGBA(255,255,128,255):wedState==4?wedDim==1?Color.fromRGBA(250,250,250,255):Color.LIGHT_GRAY:null}}">
+                                                    <rtl:input-variable name="wedValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="wedValue Value" class="grwTableNumericColumnValue" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="--#" value="{{wedValue}}"/>
+                                                </COL>
+                                                <rtl:input-variable name="thuState" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <rtl:input-variable name="thuDim" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <COL name="Thu Data Column" color="{{thuDim==1?Color.GRAY:null}}" bgColor="{{thuState==1?thuDim==1?Color.fromRGBA(184,235,88,255):Color.fromRGBA(100,144,18,255):thuState==2?thuDim==1?Color.fromRGBA(255,235,215,255):Color.fromRGBA(255,202,149,255):thuState==3?thuDim==1?Color.fromRGBA(255,255,187,255):Color.fromRGBA(255,255,128,255):thuState==4?thuDim==1?Color.fromRGBA(250,250,250,255):Color.LIGHT_GRAY:null}}">
+                                                    <rtl:input-variable name="thuValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="thuValue Value" class="grwTableNumericColumnValue" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="--#" value="{{thuValue}}"/>
+                                                </COL>
+                                                <rtl:input-variable name="friState" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <rtl:input-variable name="friDim" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <COL name="Fri Data Column" color="{{friDim==1?Color.GRAY:null}}" bgColor="{{friState==1?friDim==1?Color.fromRGBA(184,235,88,255):Color.fromRGBA(100,144,18,255):friState==2?friDim==1?Color.fromRGBA(255,235,215,255):Color.fromRGBA(255,202,149,255):friState==3?friDim==1?Color.fromRGBA(255,255,187,255):Color.fromRGBA(255,255,128,255):friState==4?friDim==1?Color.fromRGBA(250,250,250,255):Color.LIGHT_GRAY:null}}">
+                                                    <rtl:input-variable name="friValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="friValue Value" class="grwTableNumericColumnValue" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="--#" value="{{friValue}}"/>
+                                                </COL>
+                                                <rtl:input-variable name="satState" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <rtl:input-variable name="satDim" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <COL name="Sat Data Column" color="{{satDim==1?Color.GRAY:null}}" bgColor="{{satState==1?satDim==1?Color.fromRGBA(184,235,88,255):Color.fromRGBA(100,144,18,255):satState==2?satDim==1?Color.fromRGBA(255,235,215,255):Color.fromRGBA(255,202,149,255):satState==3?satDim==1?Color.fromRGBA(255,255,187,255):Color.fromRGBA(255,255,128,255):satState==4?satDim==1?Color.fromRGBA(250,250,250,255):Color.LIGHT_GRAY:null}}">
+                                                    <rtl:input-variable name="satValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="satValue Value" class="grwTableNumericColumnValue" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="--#" value="{{satValue}}"/>
+                                                </COL>
+                                                <rtl:input-variable name="sunState" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <rtl:input-variable name="sunDim" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <COL name="Sun Data Column" color="{{sunDim==1?Color.GRAY:null}}" bgColor="{{sunState==1?sunDim==1?Color.fromRGBA(184,235,88,255):Color.fromRGBA(100,144,18,255):sunState==2?sunDim==1?Color.fromRGBA(255,235,215,255):Color.fromRGBA(255,202,149,255):sunState==3?sunDim==1?Color.fromRGBA(255,255,187,255):Color.fromRGBA(255,255,128,255):sunState==4?sunDim==1?Color.fromRGBA(250,250,250,255):Color.LIGHT_GRAY:null}}">
+                                                    <rtl:input-variable name="sunValue" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                    <DECIMALFORMATBOX name="sunValue Value" class="grwTableNumericColumnValue" anchorX="1" floatingBehavior="enclosed" textAlignment="right" format="--#" value="{{sunValue}}"/>
+                                                </COL>
+                                            </ROW>
+                                        </rtl:match>
+                                    </rtl:match>
+                                </TBODY>
+                            </TABLE>
+                        </rtl:match>
+                    </MINIPAGE>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

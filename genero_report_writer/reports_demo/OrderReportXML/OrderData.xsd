@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.4js.com/2004/REPORT" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rep="http://www.4js.com/2004/REPORT">
+
+  <!-- decimal definition for this report -->
+  <xs:simpleType name="decimal">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="6" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Report">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Users">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Orders" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Lines">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ListItem" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="orderline.orders.orderid" type="xs:unsignedByte" />
+                                <xs:element name="orderline.orders.userid" type="xs:string" />
+                                <xs:element name="orderline.orders.orderdate" type="xs:date" />
+                                <xs:element name="orderline.orders.shipfirstname" type="xs:string" />
+                                <xs:element name="orderline.orders.shiplastname" type="xs:string" />
+                                <xs:element name="orderline.orders.shipaddr1" type="xs:string" />
+                                <xs:element name="orderline.orders.shipaddr2" type="xs:string" />
+                                <xs:element name="orderline.orders.shipcity" type="xs:string" />
+                                <xs:element name="orderline.orders.shipstate" type="xs:string" />
+                                <xs:element name="orderline.orders.shipzip" type="xs:string" />
+                                <xs:element name="orderline.orders.shipcountry" type="xs:string" />
+                                <xs:element name="orderline.orders.billfirstname" type="xs:string" />
+                                <xs:element name="orderline.orders.billlastname" type="xs:string" />
+                                <xs:element name="orderline.orders.billaddr1" type="xs:string" />
+                                <xs:element name="orderline.orders.billaddr2" type="xs:string" />
+                                <xs:element name="orderline.orders.billcity" type="xs:string" />
+                                <xs:element name="orderline.orders.billstate" type="xs:string" />
+                                <xs:element name="orderline.orders.billzip" type="xs:string" />
+                                <xs:element name="orderline.orders.billcountry" type="xs:string" />
+                                <xs:element name="orderline.orders.totalprice" type="rep:decimal" />
+                                <xs:element name="orderline.orders.creditcard" type="xs:string"/>
+                                <xs:element name="orderline.orders.exprdate" type="xs:string"/>
+                                <xs:element name="orderline.orders.cardtype" type="xs:string"/>
+                                <xs:element name="orderline.orders.sourceapp" type="xs:string" />
+                                <xs:element name="orderline.account.userid" type="xs:string" />
+                                <xs:element name="orderline.account.email" type="xs:string" />
+                                <xs:element name="orderline.account.firstname" type="xs:string" />
+                                <xs:element name="orderline.account.lastname" type="xs:string" />
+                                <xs:element name="orderline.account.acstatus" type="xs:string" />
+                                <xs:element name="orderline.account.addr1" type="xs:string" />
+                                <xs:element name="orderline.account.addr2" type="xs:string" />
+                                <xs:element name="orderline.account.city" type="xs:string" />
+                                <xs:element name="orderline.account.state" type="xs:string" />
+                                <xs:element name="orderline.account.zip" type="xs:string" />
+                                <xs:element name="orderline.account.country" type="xs:string" />
+                                <xs:element name="orderline.account.phone" type="xs:string" />
+                                <xs:element name="orderline.account.langpref" type="xs:string" />
+                                <xs:element name="orderline.account.favcategory" type="xs:string" />
+                                <xs:element name="orderline.account.mylistopt" type="xs:unsignedByte" />
+                                <xs:element name="orderline.account.banneropt" type="xs:unsignedByte" />
+                                <xs:element name="orderline.account.sourceapp" type="xs:string" />
+                                <xs:element name="orderline.country.code" type="xs:string" />
+                                <xs:element name="orderline.country.codedesc" type="xs:string" />
+                                <xs:element name="orderline.lineitem.orderid" type="xs:unsignedByte" />
+                                <xs:element name="orderline.lineitem.linenum" type="xs:unsignedByte" />
+                                <xs:element name="orderline.lineitem.itemid" type="xs:string" />
+                                <xs:element name="orderline.lineitem.quantity" type="xs:unsignedByte" />
+                                <xs:element name="orderline.lineitem.unitprice" type="rep:decimal" />
+                                <xs:element name="orderline.product.productid" type="xs:string" />
+                                <xs:element name="orderline.product.catid" type="xs:string" />
+                                <xs:element name="orderline.product.prodname" type="xs:string" />
+                                <xs:element name="orderline.product.proddesc" type="xs:string" />
+                                <xs:element name="orderline.product.prodpic" type="xs:string" />
+                                <xs:element name="orderline.category.catid" type="xs:string" />
+                                <xs:element name="orderline.category.catorder" type="xs:unsignedByte" />
+                                <xs:element name="orderline.category.catname" type="xs:string" />
+                                <xs:element name="orderline.category.catdesc" type="xs:string"/>
+                                <xs:element name="orderline.category.catpic" type="xs:string" />
+                                <xs:element name="orderline.item.itemid" type="xs:string" />
+                                <xs:element name="orderline.item.productid" type="xs:string" />
+                                <xs:element name="orderline.item.listprice" type="rep:decimal" />
+                                <xs:element name="orderline.item.unitcost" type="rep:decimal" />
+                                <xs:element name="orderline.item.supplier" type="xs:unsignedByte" />
+                                <xs:element name="orderline.item.itstatus" type="xs:string" />
+                                <xs:element name="orderline.item.attr1" type="xs:string" />
+                                <xs:element name="orderline.item.attr2" type="xs:string"/>
+                                <xs:element name="orderline.item.attr3" type="xs:string"/>
+                                <xs:element name="orderline.item.attr4" type="xs:string"/>
+                                <xs:element name="orderline.item.attr5" type="xs:string"/>
+                                <xs:element name="lineitemprice" type="rep:decimal" />
+                                <xs:element name="overalltotal" type="rep:decimal" />
+                                <xs:element name="ordertotal" type="rep:decimal" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

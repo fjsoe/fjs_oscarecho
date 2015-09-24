@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project defaultApplication="6157404" gstVersion="23207" version="3.0">
+  <Settings/>
+  <LanguageList version="1.0"/>
+  <PlatformList version="1.0"/>
+  <Group environment="filelist:FGLPROFILE=$(ProjectDir)/../DSConfig/fglprofile" label="Reports">
+    <Group label="Applications">
+      <Application externalDependencies="libgre.42x" id="601055982" label="Calendar" targetDirectory="$(ProjectDir)/Calendar">
+        <File filePath="Calendar/Calendar.4gl" postCompileStep="fglcomp --build-rdd &quot;$(InputPath)&quot;"/>
+        <File filePath="Calendar/Calendar.4rp"/>
+      </Application>
+      <Application externalDependencies="libgre.42x" id="140400972" label="DynamicColumnsTable" targetDirectory="$(ProjectDir)/DynamicColumnsTable">
+        <File filePath="DynamicColumnsTable/DynamicColumnsTable.4gl" postCompileStep="fglcomp --build-rdd &quot;$(InputPath)&quot;"/>
+        <File filePath="DynamicColumnsTable/DynamicColumnsTable.4rp"/>
+      </Application>
+      <Application dependencies="23569" externalDependencies="libgre.42x" id="6157404" label="OrderReport" targetDirectory="$(ProjectDir)/OrderReport">
+        <VirtualFolder label="Designs">
+          <File filePath="OrderReport/CatChart-ByAreaCat.4rp"/>
+          <File filePath="OrderReport/CatChart-ByCatCust.4rp"/>
+          <File filePath="OrderReport/CatChart-ByCustCat.4rp"/>
+          <File filePath="OrderReport/DynamicPivotTable.4rp"/>
+          <File filePath="OrderReport/GroupedTableDemo.4rp"/>
+          <File filePath="OrderReport/ListDemo.4rp"/>
+          <File filePath="OrderReport/MapChart-ByCat.4rp"/>
+          <File filePath="OrderReport/MapChart-ByCust.4rp"/>
+          <File filePath="OrderReport/MapChart-ByCustCat.4rp"/>
+          <File filePath="OrderReport/MasterReport.4rp"/>
+          <File filePath="OrderReport/OrderLabels.4rp"/>
+          <File filePath="OrderReport/OrderList.4rp"/>
+          <File filePath="OrderReport/OrderReport.4rp"/>
+          <File filePath="OrderReport/OrderStock.4rp"/>
+          <File filePath="OrderReport/StaticPivotTable.4rp"/>
+          <File filePath="OrderReport/TableDemo.4rp"/>
+        </VirtualFolder>
+        <VirtualFolder label="src">
+          <File filePath="OrderReport/captions_en.str"/>
+          <File filePath="OrderReport/Configuration.4fd"/>
+          <File filePath="OrderReport/fglprofile"/>
+          <File filePath="OrderReport/fieldselectiondialog.4fd"/>
+          <File filePath="OrderReport/fieldselectiondialog.4gl"/>
+          <File filePath="OrderReport/globals.4gl"/>
+          <File filePath="OrderReport/OrderReport.4gl" postCompileStep="fglcomp --build-rdd &quot;$(InputPath)&quot;"/>
+          <File filePath="OrderReport/pivotdialog.4fd"/>
+          <File filePath="OrderReport/pivotdialog.4gl"/>
+        </VirtualFolder>
+      </Application>
+      <Application dependencies="23569" externalDependencies="libgre.42x" id="254420720" label="OrderReportASCII" targetDirectory="$(ProjectDir)/OrderReportASCII">
+        <File filePath="OrderReportASCII/OrderReportASCII.4gl"/>
+      </Application>
+      <Application externalDependencies="libgre.42x" id="41647793" label="OrderReportXML" targetDirectory="$(ProjectDir)/OrderReportXML">
+        <File filePath="OrderReportXML/OrderReportXML.4gl"/>
+        <File filePath="OrderReportXML/Table.4rp"/>
+      </Application>
+      <Application externalDependencies="libgre.42x" id="903959472" label="XYChart" targetDirectory="$(ProjectDir)/XYChart">
+        <File filePath="XYChart/XYChart.4gl" postCompileStep="fglcomp --build-rdd &quot;$(InputPath)&quot;"/>
+        <File filePath="XYChart/XYChart.4rp"/>
+      </Application>
+    </Group>
+    <Library id="23569" label="Database" targetDirectory="$(ProjectDir)/database">
+      <File filePath="../databases/officestore/officestore.4db"/>
+    </Library>
+  </Group>
+</Project>

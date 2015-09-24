@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Text DRAFT written from bottom left corner to top right corner for A4 -->
+<svg width="100%" height="100%" version="1.2" viewBox="0 0 595.3 841.9" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(134,822)">
+<!-- For "A4" transform="rotate(atan(297mm/210mm))" -> rotate(-54.737) -->
+<!-- For "letter" transform="rotate(atan(11in/8.5in))" -> rotate(-52.306) -->
+        <text style="font-size:240px;font-weight:bold;fill:#ececec;stroke:none;" transform="rotate(-54.737)">DRAFT</text>
+    </g>
+</svg>

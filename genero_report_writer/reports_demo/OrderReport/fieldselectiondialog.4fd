@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm fileVersion="23200" gstVersion="23200" name="ManagedForm" uid="{26c5fe4b-c3ea-4a39-bbcf-b7af89726251}">
+  <AGSettings/>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="scr_left_content" order="" uid="{9efcbad7-944c-470e-bda9-59be7978755d}" where="">
+    <RecordField colName="" fieldIdRef="6" name="leftFieldName" sqlTabName="" sqlType="VARCHAR" table_alias_name="" uid="{a0e78b35-c954-4fe8-a49e-8824dd99b855}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="scr_right_content" order="" uid="{6ba9ce57-11ad-46b7-b046-27d08d6d91bc}" where="">
+    <RecordField colName="" fieldIdRef="4" name="rightFieldName" sqlTabName="" sqlType="VARCHAR" table_alias_name="" uid="{97c02d20-a8e4-491a-95b2-698029cb4465}"/>
+  </Record>
+  <Form gridHeight="21" gridWidth="101" name="Form" text="Menus">
+    <Group gridHeight="21" gridWidth="97" name="Group1" posX="0" posY="0" text="Use drag &amp; drop to select fields">
+      <Grid gridHeight="19" gridWidth="94" name="Grid1" posX="2" posY="1">
+        <Table gridHeight="19" gridWidth="44" name="Table2" posX="1" posY="0" totalRows="18" unhidableColumns="true" unmovableColumns="true" unsortableColumns="true">
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="6" gridHeight="1" gridWidth="42" name="leftFieldName" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="" sqlType="VARCHAR" stepX="" stepY="" tabIndex="1" table_alias_name="" title="Fields not printed" widget="Edit"/>
+        </Table>
+        <Table gridHeight="19" gridWidth="44" name="Table1" posX="50" posY="0" totalRows="18" unhidableColumns="true" unmovableColumns="true">
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="" columnCount="" fieldId="4" gridHeight="1" gridWidth="42" name="rightFieldName" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="" sqlType="VARCHAR" stepX="" stepY="" tabIndex="1" table_alias_name="" title="Fields contained in the report" widget="Edit"/>
+        </Table>
+        <Button gridHeight="1" gridWidth="3" image="next2" name="move_right" posX="46" posY="8" tabIndex="2"/>
+        <Button gridHeight="1" gridWidth="3" image="prev2" name="move_left" posX="46" posY="9" tabIndex="3"/>
+      </Grid>
+    </Group>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewA5AGUAZgBjAGIAYQBkADcALQA5ADQANABjAC0ANAA3ADAAZQAtAGIAZABhADkALQA1ADkAYgBlADcAOQA3ADgANwA1ADUAZAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEwAewA5ADcAYwAwADIAZAAyADAALQBhADgAZQA0AC0ANAA5ADEAYQAtADkANQBiADIALQA2ADkAOAAwADIAOQBjAGIANAA0ADYANQB9QCAAABAAAAZAQGZmdszM1AAAAAAAAAAAAQAAAEwAewA2AGIAYQA5AGMAZQA1ADcALQAxADEAYQBkAC0ANAA2AGIANwAtAGIAMAA0ADYALQAyADcAZAAwADgAZAA2AGQAOQAxAGIAYwB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEwAewBhADAAZQA3ADgAYgAzADUALQBjADkANQA0AC0ANABmAGUAOAAtAGEANAA5AGUALQA4ADgAMgA0AGQAZAA5ADkAYgA4ADUANQB9QCAAABAAAAZAQGZmdszM1AAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

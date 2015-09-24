@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23204" version="5.00">
+    <report:Settings RWPageWidth="a4length" RWPageLength="a4width" RWLeftMargin="1.3cm" RWTopMargin="1.3cm" RWRightMargin="1.3cm" RWBottomMargin="1.3cm">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Revenue by Areas and Categories" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="CategoryChart Chart OrderReport">
+            <rtl:match name="Report" nameConstraint="Report">
+                <MINIPAGE name="MiniPage1" width="max" length="max">
+                    <CATEGORYCHART name="Categorychart1" anchorX="0" anchorY="0" title="Revenue by Areas and Categories" keysTitle="Categories" valuesTitle="Revenue" categoriesTitle="Insert categories title here" drawAs="Bar">
+                        <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                            <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                    <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                                        <rtl:input-variable name="orderline.orders.shipzip" type="FGLString" expectedLocation="expectedHere"/>
+                                        <rtl:input-variable name="orderline.category.catname" type="FGLString" expectedLocation="expectedHere"/>
+                                        <rtl:input-variable name="orderline.lineitem.unitprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                        <CATEGORYITEM categoryKey="{{&quot;Area &quot;+orderline.orders.shipzip.substring(0,1)}}" key="{{orderline.category.catname.trim()}}" value="{{orderline.lineitem.unitprice}}" name="Categoryitem1"/>
+                                    </rtl:match>
+                                </rtl:match>
+                            </rtl:match>
+                        </rtl:match>
+                    </CATEGORYCHART>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

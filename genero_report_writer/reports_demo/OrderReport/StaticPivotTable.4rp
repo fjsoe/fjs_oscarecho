@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23205" version="5.00">
+    <report:Settings RWPageWidth="letterlength" RWPageLength="letterwidth" RWLeftMargin="0.5inch" RWTopMargin="0.5inch" RWRightMargin="0.5inch" RWBottomMargin="0.5inch">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Static Pivot Table" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="PivotTable OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page Root" width="max" length="max">
+                    <PIVOTTABLE name="Pivot Table" width="max" length="min" floatingBehavior="enclosed" title="Revenue Distribution by Customers" drawAs="Table">
+                        <DESCRIPTION>
+                            <DIMENSIONS>
+                                <COLUMN name="orderline.orders.userid Dimension" title="Customer"/>
+                                <COLUMN name="orderline.orders.orderid Dimension" title="Order" format="----------#" isNumeric="true"/>
+                            </DIMENSIONS>
+                            <VALUES name="Fact">
+                                <COLUMN name="orderline.lineitem.unitprice Measure" title="Unitprice" isNumeric="true"/>
+                                <COLUMN name="orderline.item.listprice Measure" title="Listprice" isNumeric="true"/>
+                                <COLUMN name="orderline.item.unitcost Measure" title="Unitcost" isNumeric="true"/>
+                                <COLUMN name="lineitemprice Measure" title="Lineitemprice" isNumeric="true"/>
+                                <COLUMN name="orderline.orders.shipzip Measure" title="Zip Code"/>
+                            </VALUES>
+                        </DESCRIPTION>
+                        <DATA>
+                            <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                <rtl:input-variable name="orderline.orders.userid" type="FGLString" expectedLocation="expectedAhead"/>
+                                <DATACOLUMN value="{{orderline.orders.userid.trim()}}"/>
+                                <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                    <rtl:input-variable name="orderline.orders.orderid" type="FGLNumeric" expectedLocation="expectedAhead"/>
+                                    <DATACOLUMN value="{{orderline.orders.orderid}}"/>
+                                    <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                        <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                                            <DATAROW>
+                                                <rtl:input-variable name="orderline.lineitem.unitprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.lineitem.unitprice}}"/>
+                                                <rtl:input-variable name="orderline.item.listprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.item.listprice}}"/>
+                                                <rtl:input-variable name="orderline.item.unitcost" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.item.unitcost}}"/>
+                                                <rtl:input-variable name="lineitemprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{lineitemprice}}"/>
+                                                <rtl:input-variable name="orderline.orders.shipzip" type="FGLString" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.orders.shipzip.trim()}}"/>
+                                            </DATAROW>
+                                        </rtl:match>
+                                    </rtl:match>
+                                </rtl:match>
+                            </rtl:match>
+                        </DATA>
+                    </PIVOTTABLE>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

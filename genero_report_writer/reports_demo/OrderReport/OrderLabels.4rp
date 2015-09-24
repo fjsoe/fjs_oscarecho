@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23204" version="5.00">
+    <report:Settings RWPageWidth="9.9cm" RWPageLength="4.3cm" RWLeftMargin="0.5cm" RWTopMargin="0.5cm" RWRightMargin="0.5cm" RWBottomMargin="0.5cm">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Address Labels" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="Label OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                    <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                        <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                            <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded"/>
+                        </rtl:match>
+                        <MINIPAGE name="Page" width="max" length="max" bgColor="#ddd9cb">
+                            <rtl:input-variable name="orderline.orders.shipfirstname" type="FGLString" expectedLocation="expectedBefore"/>
+                            <rtl:input-variable name="orderline.orders.shiplastname" type="FGLString" expectedLocation="expectedBefore"/>
+                            <WORDBOX name="WordBox1" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipfirstname.trim()+&quot; &quot;+orderline.orders.shiplastname.trim()}}"/>
+                            <rtl:input-variable name="orderline.orders.shipaddr1" type="FGLString" expectedLocation="expectedBefore"/>
+                            <WORDBOX name="WordBox2" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipaddr1.trim()}}"/>
+                            <rtl:input-variable name="orderline.orders.shipaddr2" type="FGLString" expectedLocation="expectedBefore"/>
+                            <WORDBOX name="WordBox3" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipaddr2.trim()}}"/>
+                            <rtl:input-variable name="orderline.orders.shipcountry" type="FGLString" expectedLocation="expectedBefore"/>
+                            <WORDBOX name="WordBox4" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipcountry.trim()}}"/>
+                            <rtl:input-variable name="orderline.orders.shipcity" type="FGLString" expectedLocation="expectedBefore"/>
+                            <rtl:input-variable name="orderline.orders.shipstate" type="FGLString" expectedLocation="expectedBefore"/>
+                            <WORDBOX name="WordBox5" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipcity.trim()+&quot; &quot;+orderline.orders.shipstate.trim()}}"/>
+                            <rtl:input-variable name="orderline.orders.shipzip" type="FGLString" expectedLocation="expectedBefore"/>
+                            <WORDBOX name="WordBox6" alignment="baseline" baselineType="leftleft" text="{{orderline.orders.shipzip.trim()}}"/>
+                        </MINIPAGE>
+                    </rtl:match>
+                </rtl:match>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

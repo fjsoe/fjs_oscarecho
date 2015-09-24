@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23207" version="5.00">
+    <report:Settings RWPageWidth="letterlength" RWPageLength="letterwidth" RWLeftMargin="0.5inch" RWTopMargin="0.5inch" RWRightMargin="0.5inch" RWBottomMargin="0.5inch">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Dynamic Pivot Table" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="PivotTable OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page Root" width="max" length="max" alignment="near">
+                    <rtl:input-variable name="controlBlock.title" type="FGLString" expectedLocation="expectedHere"/>
+                    <rtl:input-variable name="controlBlock.drawAs" type="FGLString" expectedLocation="expectedHere"/>
+                    <rtl:input-variable name="controlBlock.computeAggregatesOnInnermostDimension" type="FGLNumeric" expectedLocation="expectedHere"/>
+                    <PIVOTTABLE name="Pivot Table" width="max" length="min" floatingBehavior="enclosed" title="{{controlBlock.title}}" drawAs="{{controlBlock.drawAs==&quot;Area&quot;?PivotTableDrawAs.Area:controlBlock.drawAs==&quot;Bar&quot;?PivotTableDrawAs.Bar:controlBlock.drawAs==&quot;Bar3D&quot;?PivotTableDrawAs.Bar3D:controlBlock.drawAs==&quot;Line&quot;?PivotTableDrawAs.Line:controlBlock.drawAs==&quot;Line3D&quot;?PivotTableDrawAs.Line3D:controlBlock.drawAs==&quot;Pie&quot;?PivotTableDrawAs.Pie:controlBlock.drawAs==&quot;Pie3D&quot;?PivotTableDrawAs.Pie3D:controlBlock.drawAs==&quot;Polar&quot;?PivotTableDrawAs.Polar:controlBlock.drawAs==&quot;Ring&quot;?PivotTableDrawAs.Ring:controlBlock.drawAs==&quot;Scatter&quot;?PivotTableDrawAs.Scatter:controlBlock.drawAs==&quot;StackedArea&quot;?PivotTableDrawAs.StackedArea:controlBlock.drawAs==&quot;StackedBar&quot;?PivotTableDrawAs.StackedBar:controlBlock.drawAs==&quot;Step&quot;?PivotTableDrawAs.Step:controlBlock.drawAs==&quot;StepArea&quot;?PivotTableDrawAs.StepArea:controlBlock.drawAs==&quot;Table&quot;?PivotTableDrawAs.Table:controlBlock.drawAs==&quot;TimeSeries&quot;?PivotTableDrawAs.TimeSeries:controlBlock.drawAs==&quot;Waterfall&quot;?PivotTableDrawAs.Waterfall:controlBlock.drawAs==&quot;XYArea&quot;?PivotTableDrawAs.XYArea:controlBlock.drawAs==&quot;XYLine&quot;?PivotTableDrawAs.XYLine:controlBlock.drawAs==&quot;XYStackedArea&quot;?PivotTableDrawAs.XYStackedArea:PivotTableDrawAs.Table}}" computeAggregatesOnInnermostDimension="{{controlBlock.computeAggregatesOnInnermostDimension==1}}">
+                        <DESCRIPTION>
+                            <rtl:input-variable name="controlBlock.dimensionsDisplaySelection" type="FGLString" expectedLocation="expectedHere"/>
+                            <rtl:input-variable name="controlBlock.displayRecurringValues" type="FGLNumeric" expectedLocation="expectedHere"/>
+                            <DIMENSIONS inputOrder="0,1" displaySelection="{{controlBlock.dimensionsDisplaySelection}}" displayRecurringValues="{{controlBlock.displayRecurringValues==1}}">
+                                <rtl:input-variable name="controlBlock.computeTotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeDistinctCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeAverage" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMinimum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMaximum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <COLUMN name="orderline.orders.userid Dimension" title="Customer" computeTotal="{{controlBlock.computeTotal==1}}" computeCount="{{controlBlock.computeCount==1}}" computeDistinctCount="{{controlBlock.computeDistinctCount==1}}" computeAverage="{{controlBlock.computeAverage==1}}" computeMinimum="{{controlBlock.computeMinimum==1}}" computeMaximum="{{controlBlock.computeMaximum==1}}"/>
+                                <rtl:input-variable name="controlBlock.computeTotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeDistinctCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeAverage" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMinimum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMaximum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <COLUMN name="orderline.orders.orderid Dimension" title="Order" format="----------#" computeTotal="{{controlBlock.computeTotal==1}}" computeCount="{{controlBlock.computeCount==1}}" computeDistinctCount="{{controlBlock.computeDistinctCount==1}}" computeAverage="{{controlBlock.computeAverage==1}}" computeMinimum="{{controlBlock.computeMinimum==1}}" computeMaximum="{{controlBlock.computeMaximum==1}}" isNumeric="true"/>
+                                <rtl:input-variable name="controlBlock.computeTotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeDistinctCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeAverage" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMinimum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMaximum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <COLUMN name="orderline.orders.billzip Dimension" title="Shipping Area" computeTotal="{{controlBlock.computeTotal==1}}" computeCount="{{controlBlock.computeCount==1}}" computeDistinctCount="{{controlBlock.computeDistinctCount==1}}" computeAverage="{{controlBlock.computeAverage==1}}" computeMinimum="{{controlBlock.computeMinimum==1}}" computeMaximum="{{controlBlock.computeMaximum==1}}"/>
+                                <rtl:input-variable name="controlBlock.computeTotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeDistinctCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeAverage" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMinimum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMaximum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <COLUMN name="orderline.orders.billcountry Dimension" title="Shipping Country" computeTotal="{{controlBlock.computeTotal==1}}" computeCount="{{controlBlock.computeCount==1}}" computeDistinctCount="{{controlBlock.computeDistinctCount==1}}" computeAverage="{{controlBlock.computeAverage==1}}" computeMinimum="{{controlBlock.computeMinimum==1}}" computeMaximum="{{controlBlock.computeMaximum==1}}"/>
+                                <rtl:input-variable name="controlBlock.computeTotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeDistinctCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeAverage" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMinimum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMaximum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <COLUMN name="orderline.orders.shipstate Dimension" title="Shipping State" computeTotal="{{controlBlock.computeTotal==1}}" computeCount="{{controlBlock.computeCount==1}}" computeDistinctCount="{{controlBlock.computeDistinctCount==1}}" computeAverage="{{controlBlock.computeAverage==1}}" computeMinimum="{{controlBlock.computeMinimum==1}}" computeMaximum="{{controlBlock.computeMaximum==1}}"/>
+                                <rtl:input-variable name="controlBlock.computeTotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeDistinctCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeAverage" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMinimum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMaximum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <COLUMN name="orderline.product.catid Dimension" title="Product Category Id" computeTotal="{{controlBlock.computeTotal==1}}" computeCount="{{controlBlock.computeCount==1}}" computeDistinctCount="{{controlBlock.computeDistinctCount==1}}" computeAverage="{{controlBlock.computeAverage==1}}" computeMinimum="{{controlBlock.computeMinimum==1}}" computeMaximum="{{controlBlock.computeMaximum==1}}"/>
+                                <rtl:input-variable name="controlBlock.computeTotal" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeDistinctCount" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeAverage" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMinimum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <rtl:input-variable name="controlBlock.computeMaximum" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                <COLUMN name="orderline.product.catid Dimension1" title="Product Category" enumValues="Furniture, Supplies, Office Decor, Travelling, Entertainment" computeTotal="{{controlBlock.computeTotal==1}}" computeCount="{{controlBlock.computeCount==1}}" computeDistinctCount="{{controlBlock.computeDistinctCount==1}}" computeAverage="{{controlBlock.computeAverage==1}}" computeMinimum="{{controlBlock.computeMinimum==1}}" computeMaximum="{{controlBlock.computeMaximum==1}}" isNumeric="true"/>
+                            </DIMENSIONS>
+                            <rtl:input-variable name="controlBlock.measuresDisplaySelection" type="FGLString" expectedLocation="expectedHere"/>
+                            <rtl:input-variable name="controlBlock.displayFactRows" type="FGLNumeric" expectedLocation="expectedHere"/>
+                            <rtl:input-variable name="controlBlock.outputOrder" type="FGLString" expectedLocation="expectedHere"/>
+                            <rtl:input-variable name="controlBlock.topN" type="FGLNumeric" expectedLocation="expectedHere"/>
+                            <VALUES displaySelection="{{controlBlock.measuresDisplaySelection}}" name="Fact" displayFactRows="{{controlBlock.displayFactRows==1}}" outputOrder="{{controlBlock.outputOrder}}" topN="{{controlBlock.topN}}">
+                                <COLUMN name="orderline.lineitem.unitprice Measure" title="Unitprice" isNumeric="true"/>
+                                <COLUMN name="orderline.item.listprice Measure" title="Listprice" isNumeric="true"/>
+                                <COLUMN name="orderline.item.unitcost Measure" title="Unitcost" isNumeric="true"/>
+                                <COLUMN name="lineitemprice Measure" title="Lineitemprice" isNumeric="true"/>
+                                <COLUMN name="orderline.orders.shipzip Measure" title="Zip Code"/>
+                            </VALUES>
+                        </DESCRIPTION>
+                        <DATA>
+                            <rtl:match name="Group userid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                <rtl:match name="Group orderid" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                    <rtl:match name="Group linenum" nameConstraint="Group" minOccurs="0" maxOccurs="unbounded">
+                                        <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                                            <rtl:input-variable name="orderline.orders.userid" type="FGLString" expectedLocation="expectedHere"/>
+                                            <DATACOLUMN value="{{orderline.orders.userid.trim()}}"/>
+                                            <rtl:input-variable name="orderline.orders.orderid" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <DATACOLUMN value="{{orderline.orders.orderid}}"/>
+                                            <rtl:input-variable name="orderline.orders.billzip" type="FGLString" expectedLocation="expectedHere"/>
+                                            <DATACOLUMN value="{{&quot;Area &quot;+orderline.orders.billzip.substring(0,1)}}"/>
+                                            <rtl:input-variable name="orderline.orders.billcountry" type="FGLString" expectedLocation="expectedHere"/>
+                                            <DATACOLUMN value="{{orderline.orders.billcountry.trim()}}"/>
+                                            <rtl:input-variable name="orderline.orders.shipstate" type="FGLString" expectedLocation="expectedHere"/>
+                                            <DATACOLUMN value="{{orderline.orders.shipstate.trim()}}"/>
+                                            <rtl:input-variable name="orderline.product.catid" type="FGLString" expectedLocation="expectedHere"/>
+                                            <DATACOLUMN value="{{orderline.product.catid.trim()}}"/>
+                                            <rtl:input-variable name="orderline.category.catorder" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                            <DATACOLUMN value="{{orderline.category.catorder-1}}"/>
+                                            <DATAROW>
+                                                <rtl:input-variable name="orderline.lineitem.unitprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.lineitem.unitprice}}"/>
+                                                <rtl:input-variable name="orderline.item.listprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.item.listprice}}"/>
+                                                <rtl:input-variable name="orderline.item.unitcost" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.item.unitcost}}"/>
+                                                <rtl:input-variable name="lineitemprice" type="FGLNumeric" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{lineitemprice}}"/>
+                                                <rtl:input-variable name="orderline.orders.shipzip" type="FGLString" expectedLocation="expectedHere"/>
+                                                <DATACOLUMN value="{{orderline.orders.shipzip.trim()}}"/>
+                                            </DATAROW>
+                                        </rtl:match>
+                                    </rtl:match>
+                                </rtl:match>
+                            </rtl:match>
+                        </DATA>
+                    </PIVOTTABLE>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

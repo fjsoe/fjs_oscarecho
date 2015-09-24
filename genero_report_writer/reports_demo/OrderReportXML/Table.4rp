@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23200" version="5.00">
+    <report:Settings RWPageWidth="letterwidth" RWPageLength="letterlength" RWLeftMargin="0.5inch" RWTopMargin="0.5inch" RWRightMargin="0.5inch" RWBottomMargin="0.5inch">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderData.xsd" RWFglReportName="OrderData.xsd"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML>
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page Root" width="max" length="max">
+                    <CATEGORYCHART name="Categorychart" width="15cm" length="10cm" floatingBehavior="enclosed" title="Sales by categories and areas" keysTitle="Area" valuesTitle="Turnover" categoriesTitle="Product category" drawAs="SortedTable">
+                        <rtl:match name="Users" nameConstraint="Users" minOccurs="1" maxOccurs="unbounded">
+                            <rtl:match name="Orders" nameConstraint="Orders" minOccurs="1" maxOccurs="unbounded">
+                                <rtl:match name="Lines" nameConstraint="Lines" minOccurs="1" maxOccurs="unbounded">
+                                    <rtl:match name="ListItem" nameConstraint="ListItem" minOccurs="1" maxOccurs="unbounded">
+                                        <rtl:input-variable name="orderline.category.catname" type="String" expectedLocation="expectedHere"/>
+                                        <rtl:input-variable name="orderline.orders.billzip" type="String" expectedLocation="expectedHere"/>
+                                        <rtl:input-variable name="orderline.orders.totalprice" type="Numeric" expectedLocation="expectedHere"/>
+                                        <CATEGORYITEM categoryKey="{{orderline.category.catname.trim()}}" key="{{orderline.orders.billzip.trim()}}" value="{{orderline.orders.totalprice}}" name="Categoryitem"/>
+                                    </rtl:match>
+                                </rtl:match>
+                            </rtl:match>
+                        </rtl:match>
+                    </CATEGORYCHART>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>

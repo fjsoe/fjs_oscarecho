@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report:Report xmlns:rtl="http://www.4js.com/2004/RTL" xmlns:report="http://www.4js.com/2007/REPORT" xmlns="http://www.4js.com/2004/PXML" gstVersion="23204" version="5.00">
+    <report:Settings RWPageWidth="a4width" RWPageLength="a4length" RWLeftMargin="1.3cm" RWTopMargin="1.3cm" RWRightMargin="1.3cm" RWBottomMargin="1.3cm">
+        <report:FormatList>
+            <report:Format-SVG/>
+            <report:Format-PDF/>
+            <report:Format-image/>
+        </report:FormatList>
+    </report:Settings>
+    <report:Data RWDataLocation="OrderReport.rdd" RWFglReportName="report_all_orders_twice"/>
+    <report:Conflicts/>
+    <rtl:stylesheet>
+        <PXML title="Revenue Distribution by Areas, Customers and Categories" author="FOUR Js Development Tools" creator="Genero Report Writer" subject="Sample Report" keywords="SubReport CategoryChart MapChart Chart OrderReport">
+            <rtl:match name="Report" nameConstraint="Report" minOccurs="1" maxOccurs="1">
+                <MINIPAGE name="Page Root" width="max" length="max">
+                    <WORDBOX name="WordBox" fontSize="25" floatingBehavior="enclosed" text="Master Report"/>
+                    <rtl:match name="OnEveryRow" nameConstraint="OnEveryRow" minOccurs="0" maxOccurs="unbounded">
+                        <MINIPAGE name="MiniPage2" width="min" length="min" bgColor="#ffff7f">
+                            <WORDBOX name="WordBox1" floatingBehavior="enclosed" text="Sub Report 1"/>
+                            <MINIPAGE name="MiniPage" width="10cm" length="max" layoutDirection="leftToRight">
+                                <rtl:call-report name="Call to SubReport OrderReport-report_all_orders.xsd" url="CatChart-ByAreaCat.4rp"/>
+                            </MINIPAGE>
+                        </MINIPAGE>
+                        <MINIPAGE name="MiniPage3" width="min" length="min" bgColor="#ffaaff">
+                            <WORDBOX name="WordBox2" floatingBehavior="enclosed" text="Sub Report 2"/>
+                            <MINIPAGE name="MiniPage1" width="10cm" length="max" layoutDirection="leftToRight">
+                                <rtl:call-report name="Call to SubReport OrderReport-report_all_orders.xsd" url="MapChart-ByCust.4rp"/>
+                            </MINIPAGE>
+                        </MINIPAGE>
+                    </rtl:match>
+                </MINIPAGE>
+            </rtl:match>
+        </PXML>
+    </rtl:stylesheet>
+</report:Report>
