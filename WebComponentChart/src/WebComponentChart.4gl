@@ -17,6 +17,8 @@ PRIVATE DEFINE data DYNAMIC ARRAY OF INTEGER
 # MAIN
 # =============================================================================
 MAIN
+
+    -- remove the comment
     DEFINE currvalue INT
     DEFINE wc STRING
     DEFINE ddIdx INT
