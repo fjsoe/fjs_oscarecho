@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<!--
+  FOURJS_START_COPYRIGHT(D,2011)
+  Property of Four Js*
+  (c) Copyright Four Js 2011, 2014. All Rights Reserved.
+  * Trademark of Four Js Development Tools Europe Ltd
+    in the United States and elsewhere
+  
+  This file can be modified by licensees according to the product manual.
+  FOURJS_END_COPYRIGHT
+-->
+<TopMenu>
+  <TopMenuGroup text="File">
+    <TopMenuCommand name="new"/>
+    <TopMenuSeparator/>    
+    <TopMenuCommand name="append"/>
+    <TopMenuCommand name="insert"/>
+    <TopMenuCommand name="update"/>
+    <TopMenuSeparator/>
+    <TopMenuCommand name="delete"/>
+    <TopMenuSeparator/>
+    <TopMenuCommand name="query"/>
+    <TopMenuCommand name="zoom"/>
+    <TopMenuSeparator/>
+    <TopMenuCommand name="exit"/>
+  </TopMenuGroup>
+  <TopMenuGroup text="Edit">
+    <TopMenuCommand name="accept"/>
+    <TopMenuCommand name="cancel"/>
+    <TopMenuSeparator/>
+    <TopMenuCommand name="editcut"/>
+    <TopMenuCommand name="editcopy"/>
+    <TopMenuCommand name="editpaste"/>
+  </TopMenuGroup>
+  <TopMenuGroup text="Navigate">
+    <TopMenuCommand name="firstrow"/>
+    <TopMenuCommand name="prevpage"/>
+    <TopMenuCommand name="prevrow"/>
+    <TopMenuCommand name="nextrow"/>
+    <TopMenuCommand name="nextpage"/>
+    <TopMenuCommand name="lastrow"/>
+  </TopMenuGroup>
+  <TopMenuGroup text="Report">
+    <TopMenuCommand name="reportsetup"/>
+    <TopMenuSeparator/>
+    <TopMenuCommand name="reportprint"/>
+    <TopMenuCommand name="reportpreview"/>
+    <TopMenuSeparator/>
+    <TopMenuCommand name="reportexportpdf"/>
+    <TopMenuCommand name="reportexporthtml"/>
+    <TopMenuCommand name="reportexportxls"/>
+    <TopMenuCommand name="reportexportrtf"/>
+  </TopMenuGroup>
+</TopMenu>

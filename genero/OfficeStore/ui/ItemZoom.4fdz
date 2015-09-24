@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="officestore" fileVersion="23200" gstVersion="23200" name="ManagedForm" uid="{73bfee3c-0eca-494d-80e4-7b8c51477f97}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canSearch"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canSearch"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" additionalTables="" joinLeft="item.productid,product1.catid" joinOperator="INNER,INNER" joinRight="product1.productid,category1.catid" masterTable="item" name="ItemInfo" order="" uid="{95e233de-6d3c-405e-8173-3c96188fba2c}" uniqueKey="item.itemid" where="">
+    <RecordField colName="itemid" fieldIdRef="1" fieldType="TABLE_COLUMN" name="item.itemid" sqlTabName="item" sqlType="CHAR" table_alias_name="" uid="{32683efc-3688-4fbb-b7ca-c18877c6125f}"/>
+    <RecordField colName="productid" fieldIdRef="2" fieldType="TABLE_COLUMN" name="item.productid" sqlTabName="item" sqlType="CHAR" table_alias_name="" uid="{8a656339-dad6-46c4-be05-d72ec0e8b3dd}"/>
+    <RecordField colName="catid" fieldIdRef="12" fieldType="TABLE_ALIAS" name="product1.catid" sqlTabName="product" sqlType="CHAR" table_alias_name="product1" uid="{93a31372-4142-4288-a21a-a60131de35f3}"/>
+    <RecordField colName="prodname" fieldIdRef="4" fieldType="TABLE_ALIAS" name="product1.prodname" sqlTabName="product" sqlType="CHAR" table_alias_name="product1" uid="{28de05d2-d7fc-4151-aded-28a741881582}"/>
+    <RecordField colName="proddesc" fieldIdRef="9" fieldType="TABLE_ALIAS" name="product1.proddesc" sqlTabName="product" sqlType="CHAR" table_alias_name="product1" uid="{96fd5e36-895d-4f4e-bdef-f0cfd76b2c89}"/>
+    <RecordField colName="attr1" fieldIdRef="5" fieldType="TABLE_COLUMN" name="item.attr1" sqlTabName="item" sqlType="CHAR" table_alias_name="" uid="{cb4718bd-34a8-4450-a19c-5966b1163c9b}"/>
+    <RecordField colName="catname" fieldIdRef="13" fieldType="TABLE_ALIAS" name="category1.catname" sqlTabName="category" sqlType="CHAR" table_alias_name="category1" uid="{f941a8d1-8f94-42fb-958c-18524241cc32}"/>
+  </Record>
+  <Record active="true" additionalTables="" joinLeft="category.catid" joinOperator="INNER" joinRight="product.catid" masterTable="product" name="PrdInfo" order="" uid="{5dc35f91-674d-4d16-ae4e-6cbb0b9e5182}" uniqueKey="product.productid" where="">
+    <RecordField colName="catid" fieldIdRef="6" fieldType="TABLE_COLUMN" name="product.catid" sqlTabName="product" sqlType="CHAR" table_alias_name="" uid="{c893b67d-f32b-4230-94e1-39b4d508e76a}"/>
+    <RecordField colName="prodname" fieldIdRef="7" fieldType="TABLE_COLUMN" name="product.prodname" sqlTabName="product" sqlType="CHAR" table_alias_name="" uid="{1868b321-76b1-458d-989b-c2dc97c335c2}"/>
+    <RecordField colName="prodpic" fieldIdRef="8" fieldType="TABLE_COLUMN" name="product.prodpic" sqlTabName="product" sqlType="CHAR" table_alias_name="" uid="{f8cf83bc-8494-4130-84af-184feab864c2}"/>
+    <RecordField colName="proddesc" fieldIdRef="10" fieldType="TABLE_COLUMN" name="product.proddesc" sqlTabName="product" sqlType="CHAR" table_alias_name="" uid="{f05d674b-197d-43ac-b0b1-d2dc9a5f7036}"/>
+    <RecordField colName="catname" fieldIdRef="11" fieldType="TABLE_COLUMN" name="category.catname" sqlTabName="category" sqlType="CHAR" table_alias_name="" uid="{c2d996f7-eaf4-44f1-89b5-a2de97e9abc0}"/>
+    <RecordField colName="productid" fieldIdRef="3" fieldType="TABLE_COLUMN" name="product.productid" sqlTabName="product" sqlType="CHAR" table_alias_name="" uid="{7320cc8e-fa21-474a-982f-88c8504fd4c8}"/>
+    <Relation targetRecordUid="{95e233de-6d3c-405e-8173-3c96188fba2c}" uid="{a9f314d9-9e6b-4e08-8a97-42a47dc9bea5}">
+      <DynamicProperty name="foreignFields" value="product.productid"/>
+      <DynamicProperty name="primaryFields" value="item.productid"/>
+    </Relation>
+  </Record>
+  <Form gridHeight="23" gridWidth="129" name="Form" text="Item Selection">
+    <HBox gridHeight="21" gridWidth="128" name="HBox1" posX="1" posY="1">
+      <Table gridHeight="21" gridWidth="78" name="officestore1" posX="2" posY="0" rowHeight="1" totalRows="8">
+        <Phantom colName="catid" fieldId="12" fieldType="TABLE_ALIAS" name="product1.catid" sqlTabName="product" sqlType="CHAR" table_alias_name="product1" widget="Phantom"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="itemid" columnCount="" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="8" name="item.itemid" posX="0" posY="0" rowCount="" scroll="true" sqlTabName="item" sqlType="CHAR" stepX="" stepY="" tabIndex="1" table_alias_name="" title="Item id" widget="Edit"/>
+        <Phantom colName="productid" fieldId="2" fieldType="TABLE_COLUMN" name="item.productid" sqlTabName="item" sqlType="CHAR" table_alias_name="" widget="Phantom"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="prodname" columnCount="" fieldId="4" fieldType="TABLE_ALIAS" gridHeight="1" gridWidth="14" name="product1.prodname" posX="8" posY="0" rowCount="" scroll="true" sqlTabName="product" sqlType="CHAR" stepX="" stepY="" tabIndex="2" table_alias_name="product1" title="Product Name" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="proddesc" columnCount="" fieldId="9" fieldType="TABLE_ALIAS" gridHeight="1" gridWidth="16" name="product1.proddesc" posX="22" posY="0" rowCount="" scroll="true" sqlTabName="product" sqlType="CHAR" stepX="" stepY="" tabIndex="3" table_alias_name="product1" title="Description" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="attr1" columnCount="" fieldId="5" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="8" name="item.attr1" posX="38" posY="0" rowCount="" scroll="true" sqlTabName="item" sqlType="CHAR" stepX="" stepY="" tabIndex="4" table_alias_name="" title="Attributes" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="catname" columnCount="" fieldId="13" fieldType="TABLE_ALIAS" gridHeight="1" gridWidth="19" name="category1.catname" posX="46" posY="0" rowCount="" scroll="true" sqlTabName="category" sqlType="CHAR" stepX="" stepY="" tabIndex="5" table_alias_name="category1" title="Category" widget="Edit"/>
+      </Table>
+      <Grid gridHeight="21" gridWidth="46" name="Grid1" posX="80" posY="0">
+        <Group gridHeight="19" gridWidth="42" name="Group1" posX="2" posY="1" text="Item Details">
+          <Label gridHeight="1" gridWidth="8" name="Label1" posX="1" posY="1" text="Category:"/>
+          <FFLabel aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="catname" columnCount="" fieldId="11" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="25" name="category.catname" posX="10" posY="1" rowCount="" sqlTabName="category" sqlType="CHAR" stepX="" stepY="" table_alias_name="" title="Category Picture" widget="FFLabel"/>
+          <Label gridHeight="1" gridWidth="8" name="Label2" posX="1" posY="2" text="Product:"/>
+          <FFLabel aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="prodname" columnCount="" fieldId="7" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="25" name="product.prodname" posX="10" posY="2" rowCount="" sqlTabName="product" sqlType="CHAR" stepX="" stepY="" table_alias_name="" title="Product Name" widget="FFLabel"/>
+          <Label gridHeight="1" gridWidth="8" name="Label3" posX="1" posY="3" text="Description:"/>
+          <FFLabel aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="proddesc" columnCount="" fieldId="10" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="25" name="product.proddesc" posX="10" posY="3" rowCount="" sqlTabName="product" sqlType="CHAR" stepX="" stepY="" table_alias_name="" title="Category Name" widget="FFLabel"/>
+          <FFImage aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="prodpic" columnCount="" fieldId="8" fieldType="TABLE_COLUMN" gridHeight="9" gridWidth="22" height="150" name="product.prodpic" posX="1" posY="7" rowCount="" sqlTabName="product" sqlType="CHAR" stepX="" stepY="" table_alias_name="" title="Product Picture" unitHeight="pixels" unitWidth="pixels" widget="FFImage" width="150"/>
+        </Group>
+        <Phantom colName="catid" fieldId="6" fieldType="TABLE_COLUMN" name="product.catid" sqlTabName="product" sqlType="CHAR" table_alias_name="" widget="Phantom"/>
+        <Phantom colName="productid" fieldId="3" fieldType="TABLE_COLUMN" name="product.productid" sqlTabName="product" sqlType="CHAR" table_alias_name="" widget="Phantom"/>
+      </Grid>
+    </HBox>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBjAGIANAA3ADEAOABiAGQALQAzADQAYQA4AC0ANAA0ADUAMAAtAGEAMQA5AGMALQA1ADkANgA2AGIAMQAxADYAMwBjADkAYgB9QCQAAAAAAABAYyAAAAAAAAAAAAAAAAAAAQAAAEwAewBjADgAOQAzAGIANgA3AGQALQBmADMAMgBiAC0ANAAyADMAMAAtADkANABlADEALQAzADkAYgA0AGQANQAwADgAZQA3ADYAYQB9QCQAAAAAAABAQwAAAAAAAAAAAAAAAAAAAQAAAEwAewBjADIAZAA5ADkANgBmADcALQBlAGEAZgA0AC0ANAA0AGYAMQAtADgAOQBiADUALQBhADIAZABlADkANwBlADkAYQBiAGMAMAB9QCQAAAAAAABAYEAAAAAAAAAAAAAAAAAAAQAAAEwAewA1AGQAYwAzADUAZgA5ADEALQA2ADcANABkAC0ANABkADEANgAtAGEAZQA0AGUALQA2AGMAYgBiADAAYgA5AGUANQAxADgAMgB9QHHwAAAAAABAcFAAAAAAAD+5mZmZmZmfAQAAAEwAewA4AGEANgA1ADYAMwAzADkALQBkAGEAZAA2AC0ANAA2AGMANAAtAGIAZQAwADUALQBkADcAMgBlAGMAMABlADgAYgAzAGQAZAB9QCQAAAAAAABAToAAAAAAAD9wYk3S8an8AQAAAEwAewAxADgANgA4AGIAMwAyADEALQA3ADYAYgAxAC0ANAA1ADgAZAAtADkAOAA5AGIALQBjADIAZABjADkANwBjADMAMwA1AGMAMgB9QCQAAAAAAABAToAAAAAAAAAAAAAAAAAAAQAAAEwAewAzADIANgA4ADMAZQBmAGMALQAzADYAOAA4AC0ANABmAGIAYgAtAGIANwBjAGEALQBjADEAOAA4ADcANwBjADYAMQAyADUAZgB9QCQAAAAAAABAQwAAAAAAAAAAAAAAAAAAAQAAAEwAewBmADkANAAxAGEAOABkADEALQA4AGYAOQA0AC0ANAAyAGYAYgAtADkANQA4AGMALQAxADgANQAyADQAMgA0ADEAYwBjADMAMgB9QCQAAAAAAABAZgAAAAAAAAAAAAAAAAAAAQAAAEwAewA5ADMAYQAzADEAMwA3ADIALQA0ADEANAAyAC0ANAAyADgAOAAtAGEAMgAxAGEALQBhADYAMAAxADMAMQBkAGUAMwA1AGYAMwB9QCQAAAAAAABAVQAAAAAAAD+ybpeNT98/AQAAAEwAewA5ADYAZgBkADUAZQAzADYALQA4ADkANQBkAC0ANABmADQAZQAtAGIAZABlAGYALQBmADAAYwBmAGQANwA2AGIAMgBjADgAOQB9QCQAAAAAAABAYEAAAAAAAAAAAAAAAAAAAQAAAEwAewBmADAANQBkADYANwA0AGIALQAxADkANwBkAC0ANAAzAGEAYwAtAGIAMABiADEALQBkADIAZABjADkAYQA1AGYANwAwADMANgB9QCQAAAAAAABAWsAAAAAAAAAAAAAAAAAAAQAAAEwAewA5ADUAZQAyADMAMwBkAGUALQA2AGQAMwBjAC0ANAAwADUAZQAtADgAMQA3ADMALQAzAGMAOQA2ADEAOAA4AGYAYgBhADIAYwB9AAAAAAAAAAAAAAAAAAAAAD+5WBBiTdL3AQAAAEwAewAyADgAZABlADAANQBkADIALQBkADcAZgBjAC0ANAAxADUAMQAtAGEAZABlAGQALQAyADgAYQA3ADQAMQA4ADgAMQA1ADgAMgB9QCQAAAAAAABAWsAAAAAAAAAAAAAAAAAAAQAAAEwAewBmADgAYwBmADgAMwBiAGMALQA4ADQAOQA0AC0ANAAxADMAMAAtADgANABhAGYALQAxADgANABmAGUAYQBiADgANgA0AGMAMgB9QCQAAAAAAABAVQAAAAAAAAAAAAAAAAAAAQAAAEwAewA3ADMAMgAwAGMAYwA4AGUALQBmAGEAMgAxAC0ANAA3ADQAYQAtADkAOAAyAGYALQA4ADgAYwA4ADUAMAA0AGYAZAA0AGMAOAB9QCQAAAAAAABAYyAAAAAAAD+euFHrhR6+AQ==]]>
+  </DiagramLayout>
+</ManagedForm>

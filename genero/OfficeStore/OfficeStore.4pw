@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project defaultApplication="550639080" gstVersion="23200" version="3.0">
+  <Settings/>
+  <LanguageList version="1.0"/>
+  <PlatformList version="1.0"/>
+  <Group environment="dir:FGLIMAGEPATH=$(ProjectDir)/images/database||dirlist:FGLRESOURCEPATH=$(ProjectDir)/resource;$(FGLRESOURCEPATH)||file:FGLPROFILE=$(ProjectDir)/../DSConfig/fglprofile" label="Officestore Model">
+    <Application dependencies="5||6||100839596" id="249006000" label="Accounts">
+      <File filePath="ui/Account.4prg"/>
+    </Application>
+    <Library id="100839596" label="Applicationflow">
+      <File filePath="appflow/OfficestoreAppFlow.4ba"/>
+    </Library>
+    <Library id="6" label="Databases">
+      <File filePath="database/officestore.4dbx"/>
+    </Library>
+    <Library dependencies="6" externalDependencies="libgre.42x" id="5" label="Entities">
+      <File filePath="ui/AccountForm.4fdm"/>
+      <File filePath="reports/AccountListReport.4rp"/>
+      <File filePath="reports/AccountReportData.4rd"/>
+      <File filePath="ui/AccountZoom.4fdz"/>
+      <File filePath="ui/ItemZoom.4fdz"/>
+      <File filePath="ui/OrderForm.4fdm"/>
+      <File filePath="reports/OrderListReport.4rp"/>
+      <File filePath="reports/OrderReportData.4rd"/>
+    </Library>
+    <Application dependencies="100839596||5||6" id="550639080" label="Orders">
+      <File filePath="ui/Order.4prg"/>
+    </Application>
+  </Group>
+</Project>
