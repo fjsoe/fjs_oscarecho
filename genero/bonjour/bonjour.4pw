@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project defaultApplication="18736" gstVersion="23217" version="3.0">
+  <Settings/>
+  <LanguageList version="1.0"/>
+  <PlatformList version="1.0"/>
+  <Group label="Group_1">
+    <Application dependencies="14000||1986" id="18736" label="bonjour">
+      <File filePath="bonjour.4gl"/>
+    </Application>
+    <Library id="1986" label="Databases"/>
+    <Library dependencies="1986" id="14000" label="Library_1"/>
+  </Group>
+</Project>
