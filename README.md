@@ -1,5 +1,5 @@
 This is my sandbox github repository
 
-And I shared it with my work friend
+Content is just for personal test
 
 Olivier ECKERT - FJS
